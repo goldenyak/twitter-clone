@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { makeStyles, Button, Typography } from '@material-ui/core';
+import theme from '../theme';
 import {Twitter} from "@material-ui/icons";
 
 const useStyles = makeStyles ((theme) => ({
@@ -19,6 +20,8 @@ const useStyles = makeStyles ((theme) => ({
     loginSide: {
         display: 'flex',
         flexDirection: 'column',
+        flex: '0 0 50%',
+
     },
 
 }));
