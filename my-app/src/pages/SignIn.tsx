@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { makeStyles, Button, Typography } from '@material-ui/core';
-import theme from '../theme';
+import theme from "../theme";
 import {Twitter} from "@material-ui/icons";
 
 const useStyles = makeStyles ((theme) => ({
@@ -23,6 +23,9 @@ const useStyles = makeStyles ((theme) => ({
         flex: '0 0 50%',
 
     },
+    loginSideTwitterIcon: {
+        fontSize: '50px',
+    }
 
 }));
 
@@ -47,7 +50,7 @@ function SignIn() {
             </div>
             <div className={classes.loginSide}>
                 <div>
-                    <Twitter />
+                    <Twitter className={classes.loginSideTwitterIcon} color="primary" />
                     <Typography> Узнайте, что происходит в мире прямо сейчас! </Typography>
                     <Typography> Присоединяйтесь к нам прямо сейчас! </Typography>
                     <Button variant="contained" color="primary" fullWidth>Зарегистрироваться</Button>
