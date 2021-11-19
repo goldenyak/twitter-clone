@@ -11,7 +11,7 @@ const useStyles = makeStyles ((theme) => ({
     },
     blueSide: {
         backgroundColor: '#1da1f2',
-        flex: '50%',
+        flex: '0 0 50%',
         listStyleType: 'none',
         color: 'white',
         fontSize: '34px'
