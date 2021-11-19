@@ -1,8 +1,7 @@
-import { makeStyles } from '@material-ui/core';
+
 import React from 'react';
-import theme from "../theme";
-import {Button, Typography} from "@mui/material";
-import { Twitter } from '@material-ui/icons';
+import { makeStyles, Button, Typography } from '@material-ui/core';
+import {Twitter} from "@material-ui/icons";
 
 const useStyles = makeStyles ((theme) => ({
     wrapper: {
@@ -20,7 +19,6 @@ const useStyles = makeStyles ((theme) => ({
     loginSide: {
         display: 'flex',
         flexDirection: 'column',
-        flex: '50%',
     },
 
 }));
@@ -49,8 +47,8 @@ function SignIn() {
                     <Twitter />
                     <Typography> Узнайте, что происходит в мире прямо сейчас! </Typography>
                     <Typography> Присоединяйтесь к нам прямо сейчас! </Typography>
-                    <Button variant="contained" color="primary">Зарегистрироваться</Button>
-                    <Button variant="outlined" color="primary">Войти</Button>
+                    <Button variant="contained" color="primary" fullWidth>Зарегистрироваться</Button>
+                    <Button variant="outlined" color="primary" fullWidth>Войти</Button>
                 </div>
 
             </div>
