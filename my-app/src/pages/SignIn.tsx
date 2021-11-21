@@ -1,10 +1,9 @@
-
 import React from 'react';
-import { makeStyles, Button, Typography } from '@material-ui/core';
+import {makeStyles, Button, Typography} from '@material-ui/core';
 import theme from "../theme";
 import {Twitter} from "@material-ui/icons";
 
-const useStyles = makeStyles ((theme) => ({
+const useStyles = makeStyles((theme) => ({
     wrapper: {
         display: 'flex',
         height: '100vh',
@@ -12,17 +11,43 @@ const useStyles = makeStyles ((theme) => ({
     blueSide: {
         backgroundColor: '#1da1f2',
         flex: '0 0 50%',
-        listStyleType: 'none',
         color: 'white',
-        fontSize: '34px'
-
+        fontSize: '34px',
     },
+
+    blueSideInfo: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        listStyle: 'none',
+        margin: '0',
+        padding: '0',
+    },
+
     loginSide: {
         display: 'flex',
         flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
         flex: '0 0 50%',
-
     },
+
+    loginSideWrapper: {
+        width: '380px',
+    },
+
+    loginSideTitle: {
+        fontSize: '28px',
+        fontWeight: 'bold',
+        marginBottom: '20px',
+        marginTop: '10px',
+    },
+
+    loginSideButton: {
+        marginBottom: '15px',
+    },
+
     loginSideTwitterIcon: {
         fontSize: '50px',
     }
@@ -36,7 +61,7 @@ function SignIn() {
     return (
         <div className={classes.wrapper}>
             <div className={classes.blueSide}>
-                <ul>
+                <ul className={classes.blueSideInfo}>
                     <li>
                         <Typography>Читайте о том, что вам интересно.</Typography>
                     </li>
@@ -49,12 +74,13 @@ function SignIn() {
                 </ul>
             </div>
             <div className={classes.loginSide}>
-                <div>
-                    <Twitter className={classes.loginSideTwitterIcon} color="primary" />
-                    <Typography> Узнайте, что происходит в мире прямо сейчас! </Typography>
-                    <Typography> Присоединяйтесь к нам прямо сейчас! </Typography>
-                    <Button variant="contained" color="primary" fullWidth>Зарегистрироваться</Button>
-                    <Button variant="outlined" color="primary" fullWidth>Войти</Button>
+                <div className={classes.loginSideWrapper}>
+                    <Twitter className={classes.loginSideTwitterIcon} color="primary"/>
+                    <Typography className={classes.loginSideTitle}> Узнайте, что происходит в мире прямо сейчас! </Typography>
+                    <Typography> <b>Присоединяйтесь к нам прямо сейчас!</b> </Typography>
+                    <br/>
+                    <Button className={classes.loginSideButton} variant="contained" color="primary" fullWidth>Зарегистрироваться</Button>
+                    <Button className={classes.loginSideButton} variant="outlined" color="primary" fullWidth>Войти</Button>
                 </div>
 
             </div>
