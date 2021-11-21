@@ -1,14 +1,15 @@
 import React from 'react';
 import {makeStyles, Button, Typography} from '@material-ui/core';
 import theme from "../theme";
-import {Twitter, Search,} from "@material-ui/icons";
+import {Twitter} from "@material-ui/icons";
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
 
 const useStyles = makeStyles((theme) => ({
     wrapper: {
         display: 'flex',
-        height: '100vh',
+        height: 'calc(100vh - 80px)',
     },
 
     blueSide: {
@@ -16,10 +17,11 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#1da1f2',
+        backgroundColor: '#74cafe',
         flex: '0 0 50%',
-        color: 'white',
         fontSize: '34px',
+        position: 'relative',
+        overflow: 'hidden',
     },
 
     blueSideInfo: {
@@ -27,10 +29,30 @@ const useStyles = makeStyles((theme) => ({
         listStyle: 'none',
         margin: '0',
         padding: '0',
+        position: 'relative',
+
+
+        '& h6': {
+            display: 'flex',
+            alignItems: 'start',
+            fontWeight: '700',
+            fontSize: '20px',
+            color: 'white',
+            marginBottom: '40px',
+        },
     },
 
     blueSideIcons: {
-        margin_right: '50px',
+        marginRight: '20px',
+        fontSize: 32,
+    },
+
+    blueSideBigIcon: {
+        position: 'absolute',
+        left: '-50',
+        top: '-100',
+        width: '200%',
+        height: '200%',
     },
 
     loginSide: {
@@ -68,19 +90,25 @@ function SignIn() {
     return (
         <div className={classes.wrapper}>
             <div className={classes.blueSide}>
+                <Twitter className={classes.blueSideBigIcon} color="primary"/>
                 <ul className={classes.blueSideInfo}>
                     <li>
-
-                        <Typography variant='h6'> <Search className={classes.blueSideIcons}/> Читайте о том, что вам
-                            интересно.</Typography>
+                        <Typography variant='h6'>
+                            <SearchOutlinedIcon className={classes.blueSideIcons}/>
+                            Читайте о том, что вам интересно.
+                        </Typography>
                     </li>
                     <li>
-                        <Typography variant='h6'><PeopleOutlineIcon className={classes.blueSideIcons}/> Узнайте то, о
-                            чем говорят в мире.</Typography>
+                        <Typography variant='h6'>
+                            <PeopleOutlineIcon className={classes.blueSideIcons}/>
+                            Узнайте то, о чем говорят в мире.
+                        </Typography>
                     </li>
                     <li>
-                        <Typography variant='h6'> <ModeCommentOutlinedIcon
-                            className={classes.blueSideIcons}/> Присоединяйтесь к общению.</Typography>
+                        <Typography variant='h6'>
+                            <ModeCommentOutlinedIcon className={classes.blueSideIcons}/>
+                            Присоединяйтесь к общению.
+                        </Typography>
                     </li>
                 </ul>
             </div>
