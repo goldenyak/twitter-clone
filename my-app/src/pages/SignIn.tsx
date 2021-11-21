@@ -1,14 +1,21 @@
 import React from 'react';
 import {makeStyles, Button, Typography} from '@material-ui/core';
 import theme from "../theme";
-import {Twitter} from "@material-ui/icons";
+import {Twitter, Search,} from "@material-ui/icons";
+import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
+import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
 
 const useStyles = makeStyles((theme) => ({
     wrapper: {
         display: 'flex',
         height: '100vh',
     },
+
     blueSide: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: '#1da1f2',
         flex: '0 0 50%',
         color: 'white',
@@ -16,13 +23,14 @@ const useStyles = makeStyles((theme) => ({
     },
 
     blueSideInfo: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
+        width: '380px',
         listStyle: 'none',
         margin: '0',
         padding: '0',
+    },
+
+    blueSideIcons: {
+        margin_right: '50px',
     },
 
     loginSide: {
@@ -38,9 +46,9 @@ const useStyles = makeStyles((theme) => ({
     },
 
     loginSideTitle: {
-        fontSize: '28px',
+        fontSize: '32px',
         fontWeight: 'bold',
-        marginBottom: '20px',
+        marginBottom: '60px',
         marginTop: '10px',
     },
 
@@ -51,7 +59,6 @@ const useStyles = makeStyles((theme) => ({
     loginSideTwitterIcon: {
         fontSize: '50px',
     }
-
 }));
 
 
@@ -63,24 +70,31 @@ function SignIn() {
             <div className={classes.blueSide}>
                 <ul className={classes.blueSideInfo}>
                     <li>
-                        <Typography>Читайте о том, что вам интересно.</Typography>
+
+                        <Typography variant='h6'> <Search className={classes.blueSideIcons}/> Читайте о том, что вам
+                            интересно.</Typography>
                     </li>
                     <li>
-                        <Typography>Узнайте то, о чем говорят в мире.</Typography>
+                        <Typography variant='h6'><PeopleOutlineIcon className={classes.blueSideIcons}/> Узнайте то, о
+                            чем говорят в мире.</Typography>
                     </li>
                     <li>
-                        <Typography>Присоединяйтесь к общению.</Typography>
+                        <Typography variant='h6'> <ModeCommentOutlinedIcon
+                            className={classes.blueSideIcons}/> Присоединяйтесь к общению.</Typography>
                     </li>
                 </ul>
             </div>
             <div className={classes.loginSide}>
                 <div className={classes.loginSideWrapper}>
                     <Twitter className={classes.loginSideTwitterIcon} color="primary"/>
-                    <Typography className={classes.loginSideTitle}> Узнайте, что происходит в мире прямо сейчас! </Typography>
+                    <Typography className={classes.loginSideTitle}> Узнайте, что происходит в мире прямо
+                        сейчас! </Typography>
                     <Typography> <b>Присоединяйтесь к нам прямо сейчас!</b> </Typography>
                     <br/>
-                    <Button className={classes.loginSideButton} variant="contained" color="primary" fullWidth>Зарегистрироваться</Button>
-                    <Button className={classes.loginSideButton} variant="outlined" color="primary" fullWidth>Войти</Button>
+                    <Button className={classes.loginSideButton} variant="contained" color="primary"
+                            fullWidth>Зарегистрироваться</Button>
+                    <Button className={classes.loginSideButton} variant="outlined" color="primary"
+                            fullWidth>Войти</Button>
                 </div>
 
             </div>
