@@ -11,7 +11,8 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import TextField from "@mui/material/TextField";
 import DialogActions from "@mui/material/DialogActions";
-import {FormGroup} from "@mui/material";
+import {FormGroup, IconButton} from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
 
 const useStyles = makeStyles((theme) => ({
     wrapper: {
@@ -88,9 +89,14 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '50px',
     },
 
-    textField: {
-        marginBottom: '30px',
-    }
+    modalIconClose: {
+        width: '250px',
+        padding: '5px',
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+    },
+
 
 }));
 
@@ -152,13 +158,18 @@ function SignIn() {
                     </Button>
 
                     <Dialog open={open} onClose={handleClose}>
-                        <DialogTitle>
-                            <Typography variant="h6">Войти</Typography>
-                        </DialogTitle>
+                        <div className={classes.modalIconClose}>
+                            <IconButton onClick={handleClose} >
+                                <CloseIcon color="primary"/>
+                            </IconButton>
+                            <Typography variant="h5">Вход в аккаунт</Typography>
+
+                        </div>
+
                         <DialogContent>
                             <Typography>Если вы не зарегистрированы, то это лучше сделать прямо сейчас)</Typography>
                             <FormGroup>
-                                <TextField className={classes.textField}
+                                <TextField
                                            margin="dense"
                                            id="email"
                                            label="Ваш e-mail"
@@ -166,7 +177,7 @@ function SignIn() {
                                            fullWidth
                                            variant="outlined"
                                 />
-                                <TextField className={classes.textField}
+                                <TextField
                                            margin="dense"
                                            id="outlined-password-input"
                                            label="Ваш пароль"
