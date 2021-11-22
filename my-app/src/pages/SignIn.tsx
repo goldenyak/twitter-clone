@@ -11,6 +11,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import TextField from "@mui/material/TextField";
 import DialogActions from "@mui/material/DialogActions";
+import {FormGroup} from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
     wrapper: {
@@ -36,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
         margin: '0',
         padding: '0',
         position: 'relative',
-
 
         '& h6': {
             display: 'flex',
@@ -86,7 +86,12 @@ const useStyles = makeStyles((theme) => ({
 
     loginSideTwitterIcon: {
         fontSize: '50px',
+    },
+
+    textField: {
+        marginBottom: '30px',
     }
+
 }));
 
 
@@ -140,41 +145,41 @@ function SignIn() {
                             fullWidth>
                         Зарегистрироваться
                     </Button>
-                    <Button onClick={handleClickOpen} className={classes.loginSideButton} variant="outlined" color="primary"
+                    <Button onClick={handleClickOpen} className={classes.loginSideButton} variant="outlined"
+                            color="primary"
                             fullWidth>
                         Войти
                     </Button>
 
-                        <Dialog open={open} onClose={handleClose}>
-                            <DialogTitle>Subscribe</DialogTitle>
-                            <DialogContent>
-                                <DialogContentText>
-                                    To subscribe to this website, please enter your email address here. We
-                                    will send updates occasionally.
-                                </DialogContentText>
-                                <TextField
-                                    autoFocus
-                                    margin="dense"
-                                    id="name"
-                                    label="Email Address"
-                                    type="email"
-                                    fullWidth
-                                    variant="standard"
+                    <Dialog open={open} onClose={handleClose}>
+                        <DialogTitle>
+                            <Typography variant="h6">Войти</Typography>
+                        </DialogTitle>
+                        <DialogContent>
+                            <Typography>Если вы не зарегистрированы, то это лучше сделать прямо сейчас)</Typography>
+                            <FormGroup>
+                                <TextField className={classes.textField}
+                                           margin="dense"
+                                           id="email"
+                                           label="Ваш e-mail"
+                                           type="email"
+                                           fullWidth
+                                           variant="outlined"
                                 />
-                                <TextField
-                                    margin="dense"
-                                    id="name"
-                                    label="Email Address"
-                                    type="password"
-                                    fullWidth
-                                    variant="standard"
+                                <TextField className={classes.textField}
+                                           margin="dense"
+                                           id="outlined-password-input"
+                                           label="Ваш пароль"
+                                           type="password"
+                                           fullWidth
+                                           variant="outlined"
                                 />
-                            </DialogContent>
-                            <DialogActions>
-                                <Button onClick={handleClose}>Cancel</Button>
-                                <Button onClick={handleClose}>Subscribe</Button>
-                            </DialogActions>
-                        </Dialog>
+                            </FormGroup>
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={handleClose}>Войти</Button>
+                        </DialogActions>
+                    </Dialog>
 
                 </div>
             </div>
