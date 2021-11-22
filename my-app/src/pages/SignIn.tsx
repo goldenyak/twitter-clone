@@ -5,14 +5,7 @@ import {Twitter} from "@material-ui/icons";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
-import Dialog from "@mui/material/Dialog";
-import DialogTitle from "@mui/material/DialogTitle";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import TextField from "@mui/material/TextField";
-import DialogActions from "@mui/material/DialogActions";
-import {FormGroup, IconButton} from "@mui/material";
-import CloseIcon from '@mui/icons-material/Close';
+
 
 const useStyles = makeStyles((theme) => ({
     wrapper: {
@@ -104,15 +97,6 @@ const useStyles = makeStyles((theme) => ({
 function SignIn() {
     const classes = useStyles();
 
-    const [open, setOpen] = React.useState(false);
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
 
 
     return (
@@ -157,45 +141,7 @@ function SignIn() {
                         Войти
                     </Button>
 
-                    <Dialog open={open} onClose={handleClose}>
-                        <div className={classes.modalIconClose}>
-                            <IconButton onClick={handleClose}>
-                                <CloseIcon color="primary"/>
-                            </IconButton>
-                            <Typography variant="h5">Вход в аккаунт</Typography>
 
-                        </div>
-
-                        <DialogContent>
-                            <Typography style={{marginBottom: '10px'}}>Если вы не зарегистрированы, то это лучше сделать
-                                прямо сейчас)</Typography>
-                            <FormGroup>
-                                <TextField style={{marginBottom: '15px'}}
-                                           margin="dense"
-                                           id="email"
-                                           label="Ваш e-mail"
-                                           type="email"
-                                           fullWidth
-                                           variant="outlined"
-                                />
-                                <TextField
-                                    margin="dense"
-                                    id="outlined-password-input"
-                                    label="Ваш пароль"
-                                    type="password"
-                                    fullWidth
-                                    variant="outlined"
-                                />
-                            </FormGroup>
-                        </DialogContent>
-                        <DialogActions>
-                            <Button onClick={handleClose}
-                                    variant="contained"
-                                    color="primary">
-                                Войти
-                            </Button>
-                        </DialogActions>
-                    </Dialog>
 
                 </div>
             </div>
