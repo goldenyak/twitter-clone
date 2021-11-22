@@ -167,9 +167,9 @@ function SignIn() {
                         </div>
 
                         <DialogContent>
-                            <Typography>Если вы не зарегистрированы, то это лучше сделать прямо сейчас)</Typography>
+                            <Typography style={{marginBottom: '10px'}}>Если вы не зарегистрированы, то это лучше сделать прямо сейчас)</Typography>
                             <FormGroup>
-                                <TextField
+                                <TextField style={{marginBottom: '15px'}}
                                            margin="dense"
                                            id="email"
                                            label="Ваш e-mail"
@@ -188,7 +188,7 @@ function SignIn() {
                             </FormGroup>
                         </DialogContent>
                         <DialogActions>
-                            <Button onClick={handleClose}>Войти</Button>
+                            <Button onClick={handleClose} color="primary">Войти</Button>
                         </DialogActions>
                     </Dialog>
 
