@@ -159,7 +159,7 @@ function SignIn() {
 
                     <Dialog open={open} onClose={handleClose}>
                         <div className={classes.modalIconClose}>
-                            <IconButton onClick={handleClose} >
+                            <IconButton onClick={handleClose}>
                                 <CloseIcon color="primary"/>
                             </IconButton>
                             <Typography variant="h5">Вход в аккаунт</Typography>
@@ -167,7 +167,8 @@ function SignIn() {
                         </div>
 
                         <DialogContent>
-                            <Typography style={{marginBottom: '10px'}}>Если вы не зарегистрированы, то это лучше сделать прямо сейчас)</Typography>
+                            <Typography style={{marginBottom: '10px'}}>Если вы не зарегистрированы, то это лучше сделать
+                                прямо сейчас)</Typography>
                             <FormGroup>
                                 <TextField style={{marginBottom: '15px'}}
                                            margin="dense"
@@ -178,17 +179,21 @@ function SignIn() {
                                            variant="outlined"
                                 />
                                 <TextField
-                                           margin="dense"
-                                           id="outlined-password-input"
-                                           label="Ваш пароль"
-                                           type="password"
-                                           fullWidth
-                                           variant="outlined"
+                                    margin="dense"
+                                    id="outlined-password-input"
+                                    label="Ваш пароль"
+                                    type="password"
+                                    fullWidth
+                                    variant="outlined"
                                 />
                             </FormGroup>
                         </DialogContent>
                         <DialogActions>
-                            <Button onClick={handleClose} color="primary">Войти</Button>
+                            <Button onClick={handleClose}
+                                    variant="contained"
+                                    color="primary">
+                                Войти
+                            </Button>
                         </DialogActions>
                     </Dialog>
 
