@@ -5,11 +5,17 @@ import {Twitter} from "@material-ui/icons";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import TextField from "@mui/material/TextField";
+import DialogActions from "@mui/material/DialogActions";
 
 const useStyles = makeStyles((theme) => ({
     wrapper: {
         display: 'flex',
-        height: 'calc(100vh - 80px)',
+        height: '100vh',
     },
 
     blueSide: {
@@ -87,6 +93,17 @@ const useStyles = makeStyles((theme) => ({
 function SignIn() {
     const classes = useStyles();
 
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+
     return (
         <div className={classes.wrapper}>
             <div className={classes.blueSide}>
@@ -120,14 +137,54 @@ function SignIn() {
                     <Typography> <b>Присоединяйтесь к нам прямо сейчас!</b> </Typography>
                     <br/>
                     <Button className={classes.loginSideButton} variant="contained" color="primary"
-                            fullWidth>Зарегистрироваться</Button>
-                    <Button className={classes.loginSideButton} variant="outlined" color="primary"
-                            fullWidth>Войти</Button>
-                </div>
+                            fullWidth>
+                        Зарегистрироваться
+                    </Button>
+                    <Button onClick={handleClickOpen} className={classes.loginSideButton} variant="outlined" color="primary"
+                            fullWidth>
+                        Войти
+                    </Button>
 
+                        <Dialog open={open} onClose={handleClose}>
+                            <DialogTitle>Subscribe</DialogTitle>
+                            <DialogContent>
+                                <DialogContentText>
+                                    To subscribe to this website, please enter your email address here. We
+                                    will send updates occasionally.
+                                </DialogContentText>
+                                <TextField
+                                    autoFocus
+                                    margin="dense"
+                                    id="name"
+                                    label="Email Address"
+                                    type="email"
+                                    fullWidth
+                                    variant="standard"
+                                />
+                                <TextField
+                                    margin="dense"
+                                    id="name"
+                                    label="Email Address"
+                                    type="password"
+                                    fullWidth
+                                    variant="standard"
+                                />
+                            </DialogContent>
+                            <DialogActions>
+                                <Button onClick={handleClose}>Cancel</Button>
+                                <Button onClick={handleClose}>Subscribe</Button>
+                            </DialogActions>
+                        </Dialog>
+
+                </div>
             </div>
         </div>
     );
 }
 
 export default SignIn;
+
+
+
+
+
