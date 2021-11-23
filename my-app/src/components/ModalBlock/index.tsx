@@ -1,5 +1,5 @@
-import React, {ComponentProps} from 'react';
-import {DialogTitle, FormGroup, IconButton} from "@mui/material";
+import React from 'react';
+import {DialogTitle, IconButton} from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import {Button, Typography} from "@material-ui/core";
 import DialogContent from "@mui/material/DialogContent";

@@ -6,14 +6,10 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
 import ModalBlock from "../components/ModalBlock";
-import {DialogTitle, IconButton} from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-import DialogContent from "@mui/material/DialogContent";
-import TextField from "@mui/material/TextField";
-import DialogActions from "@mui/material/DialogActions";
 
 
-export const useStylesSignIn = makeStyles(() => ({
+
+export const useStylesSignIn = makeStyles((theme) => ({
     wrapper: {
         display: 'flex',
         height: '100vh',
@@ -107,11 +103,11 @@ function SignIn() {
 
     const handleClickOpenSignIn = (): void => {
         setVisibleModal('signIn');
-    }; // Показываем модальное окно при клике
+    }; // Показываем модальное окно ВХОДА В АККАУНТ при клике
 
     const handleClickOpenSignUp = (): void => {
         setVisibleModal('signOut');
-    }; // Показываем модальное окно при клике
+    }; // Показываем модальное окно РЕГИСТРАЦИИ при клике
 
     const handleCloseModal = (): void => {
         setVisibleModal(undefined);
