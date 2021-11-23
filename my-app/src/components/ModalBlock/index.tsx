@@ -15,7 +15,7 @@ interface ModalBlockProps {
     onClose: () => void;
 }
 
-const ModalBlock: React.FC<ModalBlockProps> = ({title, children, classes, onClose, visible,  }): React.ReactElement => {
+const ModalBlock: React.FC<ModalBlockProps> = ({title, children, classes, onClose, visible,}): React.ReactElement => {
 
     return (
         <Dialog open={visible} onClose={onClose}>
@@ -49,9 +49,10 @@ const ModalBlock: React.FC<ModalBlockProps> = ({title, children, classes, onClos
                 />
             </DialogContent>
             <DialogActions>
-                <Button onClick={onClose}
+                <Button className={classes.loginSideButton} onClick={onClose}
                         variant="contained"
-                        color="primary">
+                        color="primary"
+                        fullWidth>
                     Войти
                 </Button>
             </DialogActions>

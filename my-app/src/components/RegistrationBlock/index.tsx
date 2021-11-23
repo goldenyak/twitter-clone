@@ -15,7 +15,12 @@ interface RegistrationBlockProps {
     onClose: () => void;
 }
 
-const RegistrationBlock: React.FC<RegistrationBlockProps> = ({title, children, classes, onClose, visible,  }): React.ReactElement => {
+const RegistrationBlock: React.FC<RegistrationBlockProps> = ({
+                                                                 title,
+                                                                 classes,
+                                                                 onClose,
+                                                                 visible,
+                                                             }): React.ReactElement => {
 
     return (
         <Dialog open={visible} onClose={onClose}>
@@ -29,15 +34,23 @@ const RegistrationBlock: React.FC<RegistrationBlockProps> = ({title, children, c
             </DialogTitle>
             <DialogContent>
                 <Typography style={{marginBottom: '10px'}}>
-                    Если вы не зарегистрированы, то это лучше сделать прямо сейчас)
+                    Пройдите простую и быструю регистрацию :)
                 </Typography>
+                <TextField style={{marginBottom: '15px'}}
+                           margin="dense"
+                           id="name"
+                           label="Ваше имя"
+                           type="name"
+                           fullWidth
+                           variant="standard"
+                />
                 <TextField style={{marginBottom: '15px'}}
                            margin="dense"
                            id="email"
                            label="Ваш e-mail"
                            type="email"
                            fullWidth
-                           variant="outlined"
+                           variant="standard"
                 />
                 <TextField
                     margin="dense"
@@ -45,14 +58,15 @@ const RegistrationBlock: React.FC<RegistrationBlockProps> = ({title, children, c
                     label="Ваш пароль"
                     type="password"
                     fullWidth
-                    variant="outlined"
+                    variant="standard"
                 />
             </DialogContent>
             <DialogActions>
-                <Button onClick={onClose}
+                <Button className={classes.loginSideButton}
                         variant="contained"
-                        color="primary">
-                    Войти
+                        color="primary"
+                        fullWidth>
+                    Далее
                 </Button>
             </DialogActions>
 
