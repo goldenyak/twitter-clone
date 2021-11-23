@@ -1,14 +1,11 @@
 import React from 'react';
 import {makeStyles, Button, Typography} from '@material-ui/core';
-import theme from "../theme";
 import {Twitter} from "@material-ui/icons";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
 import ModalBlock from "../components/ModalBlock";
 import RegistrationBlock from '../components/RegistrationBlock';
-
-
 
 export const useStylesSignIn = makeStyles((theme) => ({
     wrapper: {
@@ -92,10 +89,6 @@ export const useStylesSignIn = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
     },
-
-
-
-
 }));
 
 
@@ -162,7 +155,7 @@ function SignIn() {
                             fullWidth>
                         Войти
                     </Button>
-                    {/*// Наше модальное окно для входа в аккаунт*/}
+                    {/*// Наше модальное окно для входа в аккаунт и регистрации*/}
                     <ModalBlock visible={visibleModal === 'signIn'} title="Вход в аккаунт" classes={classes}
                                 onClose={handleCloseModal}/>
                     <RegistrationBlock visible={visibleModal === 'signOut'} title="Регистрация"
