@@ -6,6 +6,7 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
 import ModalBlock from "../components/ModalBlock";
+import RegistrationBlock from '../components/RegistrationBlock';
 
 
 
@@ -162,7 +163,7 @@ function SignIn() {
                     {/*// Наше модальное окно для входа в аккаунт*/}
                     <ModalBlock visible={visibleModal === 'signIn'} title="Вход в аккаунт" classes={classes}
                                 onClose={handleCloseModal}/>
-                    <ModalBlock visible={visibleModal === 'signOut'} title="Регистрация"
+                    <RegistrationBlock visible={visibleModal === 'signOut'} title="Регистрация"
                                 classes={classes} onClose={handleCloseModal}/>
                 </div>
             </div>
