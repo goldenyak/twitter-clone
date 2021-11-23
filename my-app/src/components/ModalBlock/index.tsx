@@ -10,7 +10,6 @@ import {useStylesSignIn} from "../../pages/SignIn";
 
 interface ModalBlockProps {
     title: string;
-    children: React.ReactNode;
     classes: ReturnType<typeof useStylesSignIn>;
     visible: boolean;
     onClose: () => void;

@@ -103,15 +103,15 @@ export const useStylesSignIn = makeStyles(() => ({
 function SignIn() {
     const classes = useStylesSignIn();
 
-    const [visibleSignIn, setVisibleSignIn] = React.useState(false);
+    const [visibleSignIn, setVisibleSignIn] = React.useState(false); // Стейт для отображения модального окна при входе
 
     const handleClickOpen = () => {
         setVisibleSignIn(true);
-    };
+    }; // Показываем модальное окно при клике
 
     const handleClose = () => {
         setVisibleSignIn(false);
-    };
+    }; // Скрываем модальное окно при клике
 
 
     return (
@@ -155,24 +155,7 @@ function SignIn() {
                             fullWidth>
                         Войти
                     </Button>
-                    <ModalBlock visible={visibleSignIn} title="Вход в аккаунт" classes={classes} onClose={handleClose}>
-                            <TextField style={{marginBottom: '15px'}}
-                                       margin="dense"
-                                       id="email"
-                                       label="Ваш e-mail"
-                                       type="email"
-                                       fullWidth
-                                       variant="outlined"
-                            />
-                            <TextField
-                                margin="dense"
-                                id="outlined-password-input"
-                                label="Ваш пароль"
-                                type="password"
-                                fullWidth
-                                variant="outlined"
-                            />
-                    </ModalBlock>
+                    <ModalBlock visible={visibleSignIn} title="Вход в аккаунт" classes={classes} onClose={handleClose}/>
                 </div>
             </div>
         </div>
