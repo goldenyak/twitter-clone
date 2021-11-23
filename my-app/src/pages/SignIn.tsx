@@ -109,6 +109,10 @@ function SignIn() {
         setVisibleModal('signIn');
     }; // Показываем модальное окно при клике
 
+    const handleClickOpenSignUp = (): void => {
+        setVisibleModal('signOut');
+    }; // Показываем модальное окно при клике
+
     const handleCloseModal = (): void => {
         setVisibleModal(undefined);
     }; // Скрываем модальное окно при клике
@@ -146,17 +150,24 @@ function SignIn() {
                         сейчас! </Typography>
                     <Typography> <b>Присоединяйтесь к нам прямо сейчас!</b> </Typography>
                     <br/>
-                    <Button className={classes.loginSideButton} variant="contained" color="primary"
+                    <Button onClick={handleClickOpenSignUp}
+                            className={classes.loginSideButton}
+                            variant="contained" color="primary"
                             fullWidth>
                         Зарегистрироваться
                     </Button>
-                    <Button onClick={handleClickOpen} className={classes.loginSideButton} variant="outlined"
+                    <Button onClick={handleClickOpenSignIn}
+                            className={classes.loginSideButton}
+                            variant="outlined"
                             color="primary"
                             fullWidth>
                         Войти
                     </Button>
                     {/*// Наше модальное окно для входа в аккаунт*/}
-                    <ModalBlock visible={visibleSignIn} title="Вход в аккаунт" classes={classes} onClose={handleClose}/>
+                    <ModalBlock visible={visibleModal === 'signIn'} title="Вход в аккаунт" classes={classes}
+                                onClose={handleCloseModal}/>
+                    <ModalBlock visible={visibleModal === 'signOut'} title="Регистрация"
+                                classes={classes} onClose={handleCloseModal}/>
                 </div>
             </div>
         </div>
