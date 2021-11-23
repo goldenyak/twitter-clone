@@ -6,34 +6,26 @@ import DialogContent from "@mui/material/DialogContent";
 import TextField from "@mui/material/TextField";
 import DialogActions from "@mui/material/DialogActions";
 import Dialog from "@mui/material/Dialog";
+import {useStylesSignIn} from "../../pages/SignIn";
 
 interface ModalBlockProps {
     title: string;
     children: React.ReactNode;
-
+    classes: ReturnType<typeof useStylesSignIn>;
+    visible: boolean;
+    onClose: () => void;
 }
 
-
-const ModalBlock: React.FC<ModalBlockProps> = () => {
-
-    const [open, setOpen] = React.useState(false);
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
+const ModalBlock: React.FC<ModalBlockProps> = ({title, children, classes, onClose, visible,  }): React.ReactElement => {
 
     return (
-        <Dialog open={open} onClose={handleClose}>
+        <Dialog open={visible} onClose={onClose}>
             <DialogTitle>
                 <div className={classes.modalIconClose}>
-                    <IconButton onClick={handleClose}>
+                    <IconButton onClick={onClose}>
                         <CloseIcon color="primary"/>
                     </IconButton>
-                    <Typography variant="h5">Вход в аккаунт</Typography>
+                    <Typography variant="h5">{title}</Typography>
                 </div>
             </DialogTitle>
             <DialogContent>
@@ -58,7 +50,7 @@ const ModalBlock: React.FC<ModalBlockProps> = () => {
                 />
             </DialogContent>
             <DialogActions>
-                <Button onClick={handleClose}
+                <Button onClick={onClose}
                         variant="contained"
                         color="primary">
                     Войти

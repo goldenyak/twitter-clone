@@ -5,9 +5,15 @@ import {Twitter} from "@material-ui/icons";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
+import ModalBlock from "../components/ModalBlock";
+import {DialogTitle, IconButton} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import DialogContent from "@mui/material/DialogContent";
+import TextField from "@mui/material/TextField";
+import DialogActions from "@mui/material/DialogActions";
 
 
-const useStyles = makeStyles((theme) => ({
+export const useStylesSignIn = makeStyles(() => ({
     wrapper: {
         display: 'flex',
         height: '100vh',
@@ -26,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     blueSideInfo: {
-        width: '380px',
+        width: '450px',
         listStyle: 'none',
         margin: '0',
         padding: '0',
@@ -34,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
         '& h6': {
             display: 'flex',
-            alignItems: 'start',
+            alignItems: 'center',
             fontWeight: '700',
             fontSize: '20px',
             color: 'white',
@@ -83,10 +89,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     modalIconClose: {
+        position: 'relative',
+        left: '-10px',
         width: '250px',
-        padding: '5px',
         display: 'flex',
-        justifyContent: 'space-around',
         alignItems: 'center',
     },
 
@@ -95,8 +101,17 @@ const useStyles = makeStyles((theme) => ({
 
 
 function SignIn() {
-    const classes = useStyles();
+    const classes = useStylesSignIn();
 
+    const [visibleSignIn, setVisibleSignIn] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setVisibleSignIn(true);
+    };
+
+    const handleClose = () => {
+        setVisibleSignIn(false);
+    };
 
 
     return (
@@ -140,9 +155,24 @@ function SignIn() {
                             fullWidth>
                         Войти
                     </Button>
-
-
-
+                    <ModalBlock visible={visibleSignIn} title="Вход в аккаунт" classes={classes} onClose={handleClose}>
+                            <TextField style={{marginBottom: '15px'}}
+                                       margin="dense"
+                                       id="email"
+                                       label="Ваш e-mail"
+                                       type="email"
+                                       fullWidth
+                                       variant="outlined"
+                            />
+                            <TextField
+                                margin="dense"
+                                id="outlined-password-input"
+                                label="Ваш пароль"
+                                type="password"
+                                fullWidth
+                                variant="outlined"
+                            />
+                    </ModalBlock>
                 </div>
             </div>
         </div>
