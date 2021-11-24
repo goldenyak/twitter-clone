@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ReactElement} from 'react';
 import {makeStyles, Button, Typography} from '@material-ui/core';
 import {Twitter} from "@material-ui/icons";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
@@ -92,7 +92,7 @@ export const useStylesSignIn = makeStyles((theme) => ({
 }));
 
 
-function SignIn() {
+export const SignIn: React.FC = (): React.ReactElement =>  {
     const classes = useStylesSignIn();
 
     const [visibleModal, setVisibleModal] = React.useState<'signIn' | 'signOut'>(); // Стейт для отображения модального окна при входе
