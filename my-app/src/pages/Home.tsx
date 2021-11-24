@@ -12,15 +12,21 @@ import ProfileIcon from '@mui/icons-material/PermIdentityOutlined';
 export const useStylesHome = makeStyles(() => ({
     wrapper: {
         display: 'flex',
-
     },
 
-    contentBlocksLeft: {
+    sideBar: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'start',
         width: '20%',
-        padding: '10px 10px 10px 20px',
+        padding: '10px 10px 10px 25px',
+    },
+
+    sideBarText: {
+        fontWeight: 650,
+        fontSize: '18px',
+        letterSpacing: '1px',
+        color: '#757575',
     },
 
     contentBlocksCenter: {
@@ -33,7 +39,7 @@ export const useStylesHome = makeStyles(() => ({
     contentBlocksRight: {
         width: '10%',
         backgroundColor: 'green',
-    }
+    },
 
 }));
 
@@ -42,54 +48,57 @@ export const Home = () => {
 
     return (
         <div className={classes.wrapper}>
-            <div className={classes.contentBlocksLeft}>
+            <div className={classes.sideBar}>
                 <IconButton>
-                    <TwitterIcon color="primary"/>
+                    <TwitterIcon color="primary" fontSize='large'/>
                 </IconButton>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <IconButton>
                         <HomeIcon/>
                     </IconButton>
-                    <Typography variant="h6">Домой</Typography>
+                    <Typography className={classes.sideBarText} variant="h6">Главная</Typography>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <IconButton>
                         <TagIcon/>
                     </IconButton>
-                    <Typography variant="h6">Поиск</Typography>
+                    <Typography className={classes.sideBarText} variant="h6">Поиск</Typography>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <IconButton>
                         <NotificationsIcon/>
                     </IconButton>
-                    <Typography variant="h6">Уведомления</Typography>
+                    <Typography className={classes.sideBarText} variant="h6">Уведомления</Typography>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <IconButton>
                         <EmailIcon/>
                     </IconButton>
-                    <Typography variant="h6">Сообщения</Typography>
+                    <Typography className={classes.sideBarText} variant="h6">Сообщения</Typography>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <IconButton>
                         <BookmarkIcon/>
                     </IconButton>
-                    <Typography variant="h6">Закладки</Typography>
+                    <Typography className={classes.sideBarText}variant="h6">Закладки</Typography>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <IconButton>
                         <ListIcon/>
                     </IconButton>
-                    <Typography variant="h6">Список</Typography>
+                    <Typography className={classes.sideBarText} variant="h6">Список</Typography>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <IconButton>
                         <ProfileIcon/>
                     </IconButton>
-                    <Typography variant="h6">Профиль</Typography>
+                    <Typography className={classes.sideBarText} variant="h6">Пользователи</Typography>
                 </div>
             </div>
-            <div className={classes.contentBlocksCenter}></div>
+
+
+
+            <div className={classes.contentBlocksCenter}>2</div>
             <div className={classes.contentBlocksRight}>3</div>
         </div>
     );
