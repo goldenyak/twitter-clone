@@ -6,8 +6,8 @@ import {Home} from "./pages/Home";
 export const App = () => {
     return (
         <Routes>
-            <Route path="/" element={<SignIn/>}/>
-            <Route path="/home" element={<Home/>}/>
+            <Route path="/signIn" element={<SignIn/>}/>
+            <Route path="/" element={<Home/>}/>
         </Routes>
 
     );
