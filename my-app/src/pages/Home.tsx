@@ -27,6 +27,7 @@ export const useStylesHome = makeStyles(() => ({
         fontSize: '18px',
         letterSpacing: '1px',
         color: '#757575',
+        marginLeft: '15px',
     },
 
     contentBlocksCenter: {
@@ -80,7 +81,7 @@ export const Home = () => {
                     <IconButton>
                         <BookmarkIcon/>
                     </IconButton>
-                    <Typography className={classes.sideBarText}variant="h6">Закладки</Typography>
+                    <Typography className={classes.sideBarText} variant="h6">Закладки</Typography>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <IconButton>
@@ -95,7 +96,6 @@ export const Home = () => {
                     <Typography className={classes.sideBarText} variant="h6">Пользователи</Typography>
                 </div>
             </div>
-
 
 
             <div className={classes.contentBlocksCenter}>2</div>
