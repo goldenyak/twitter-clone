@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter as Router, Route, Link, Routes} from "react-router-dom";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import SignIn from "./pages/SignIn";
-import { ThemeProvider } from '@material-ui/core';
+import {ThemeProvider} from '@material-ui/core';
 import theme from "./theme";
+import {App} from './App';
+
 
 ReactDOM.render(
     <React.StrictMode>
         <ThemeProvider theme={theme}>
-            <SignIn />
+            <Router>
+                <App/>
+            </Router>
         </ThemeProvider>
     </React.StrictMode>,
     document.getElementById('root')

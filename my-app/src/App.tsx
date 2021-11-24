@@ -1,29 +1,17 @@
 import React from 'react';
-import './App.css';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
+import {Route, Routes} from "react-router-dom";
+import SignIn from './pages/SignIn';
+import {Home} from "./pages/Home";
 
-const divStyle = {
-    marginBottom: '20px',
-    color: 'red',
-
-}
-
-
-function App() {
+export const App = () => {
     return (
-        <div className="App">
-            <div style={{marginBottom: '50px', color: 'blue', textDecoration: 'line-through'}}>hello world</div>
-            <button style={divStyle}>click me</button>
-            <div>
-                <Button variant="outlined">Outlined</Button>
-            </div>
-            <div>
-                <TextField label="Введите" variant="standard" />
-            </div>
-        </div>
-    );
-}
+        <Routes>
+            <Route path="/" element={<SignIn/>}/>
+            <Route path="/home" element={<Home/>}/>
+        </Routes>
 
-export default App;
+    );
+};
+
+
 
