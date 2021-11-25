@@ -8,7 +8,7 @@ import EmailIcon from '@mui/icons-material/EmailOutlined';
 import BookmarkIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import ListIcon from '@mui/icons-material/FormatListBulletedOutlined';
 import ProfileIcon from '@mui/icons-material/PermIdentityOutlined';
-import {Paper} from "@mui/material";
+import Paper from '@mui/material/Paper';
 
 export const useStylesHome = makeStyles(() => ({
     body: {
@@ -40,25 +40,35 @@ export const useStylesHome = makeStyles(() => ({
         flex: 'auto',
         alignItems: 'center',
         justifyContent: 'space-between',
+        '& .MuiPaper-root': {
+            borderRadius: '0',
+            borderBottom: '0',
+            borderTop: '0',
+        }
     },
 
     contentBlocksRight: {
         width: '25%',
-        backgroundColor: 'green',
     },
 
     tweetsWrapper: {
-        borderRadius: 0,
         height: '100%',
-        borderBottom: 0,
-        borderTop: 0,
+        '& .MuiPaper-root': {
+            borderRadius: '0',
+            borderTop: '0',
+            borderLeft: '0',
+            borderRight: '0',
+            borderBottom: '1px solid #e1e0e0 ',
+        }
 
     },
 
-    tweetsWrapperHeader: {
-        borderRadius: 0,
-        borderLeft: 0,
-        borderRight: 0,
+    tweetsHeader: {
+        padding: '10px',
+
+
+
+
 
     },
 
@@ -121,8 +131,8 @@ export const Home = () => {
 
                 <div className={classes.contentBlocksCenter}>
                     <Paper className={classes.tweetsWrapper} variant="outlined">
-                        <Paper className={classes.tweetsWrapperHeader} variant="outlined">
-                            <Typography>Главная</Typography>
+                        <Paper className={classes.tweetsHeader} variant="outlined">
+                            <Typography variant="h6">Главная</Typography>
                         </Paper>
                     </Paper>
                 </div>
