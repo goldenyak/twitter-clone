@@ -197,9 +197,13 @@ export const Home = () => {
                                             холодном поту
                                         </Typography>
                                         <div className={classes.tweetIconGroup}>
-                                            <IconButton>
-                                                <ReplyIcon fontSize="small"/>
-                                            </IconButton>
+                                            <div style={{display: 'flex', alignItems: 'center'}}>
+                                                <IconButton>
+                                                    <ReplyIcon fontSize="small"/>
+                                                </IconButton>
+                                                <span style={{fontSize: '12px'}}>1</span>
+                                            </div>
+
                                             <IconButton>
                                                 <RepeatIcon fontSize="small"/>
                                             </IconButton>
