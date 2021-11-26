@@ -17,6 +17,7 @@ import Avatar from '@mui/material/Avatar';
 import TextField from '@mui/material/TextField';
 import {Container, Grid} from "@mui/material";
 import {grey} from "@mui/material/colors";
+import {Tweet} from "../components/Tweet/Tweet";
 
 export const useStylesHome = makeStyles(() => ({
     body: {
@@ -229,43 +230,11 @@ export const Home = () => {
                         <Paper className={classes.tweetsHeader} variant="outlined">
                             <Typography className={classes.tweetsHeaderText} variant="h6">Главная</Typography>
                         </Paper>
-                        <Paper className={classes.tweetBlock} variant="outlined">
-                            <Grid container spacing={3}>
-                                <Grid item xs={1}>
-                                    <Avatar alt="Cat"
-                                            src="https://media.istockphoto.com/photos/kitten-at-home-garden-wall-picture-id1273661469?b=1&k=20&m=1273661469&s=170667a&w=0&h=K-b-88J89oSBIwbD0WhhDoOvybcbjfePJoOHS0grHHA="/>
-                                </Grid>
-                                <Grid item xs={11}>
-                                    <Typography><b>Apple Pro</b> <span className={classes.tweetUserName}>@aaplpro</span>
-                                        <Typography style={{marginTop: '10px'}}>
-                                            Стив Возняк подписал редкий образец материнской платы Apple Computer I 1976
-                                            года на встрече в Дубае
-                                            Ждем теперь новый лот на аукционе Улыбающееся лицо с открытым ртом и в
-                                            холодном поту
-                                        </Typography>
-                                        <div className={classes.tweetIconGroup}>
-                                            <div style={{display: 'flex', alignItems: 'center'}}>
-                                                <IconButton className={classes.tweetBlockIcon1}>
-                                                    <ReplyIcon fontSize="small"/>
-                                                </IconButton>
-                                                <span style={{fontSize: '12px'}}>1</span>
-                                            </div>
-
-                                            <IconButton className={classes.tweetBlockIcon2}>
-                                                <RepeatIcon fontSize="small"/>
-                                            </IconButton>
-                                            <IconButton className={classes.tweetBlockIcon3}>
-                                                <LikeIcon fontSize="small"/>
-                                            </IconButton>
-                                            <IconButton className={classes.tweetBlockIcon4}>
-                                                <ShareIcon fontSize="small"/>
-                                            </IconButton>
-                                        </div>
-                                    </Typography>
-                                </Grid>
-                            </Grid>
-
-                        </Paper>
+                        <Tweet classes={classes}/>
+                        <Tweet classes={classes}/>
+                        <Tweet classes={classes}/>
+                        <Tweet classes={classes}/>
+                        <Tweet classes={classes}/>
                     </Paper>
                 </div>
 
