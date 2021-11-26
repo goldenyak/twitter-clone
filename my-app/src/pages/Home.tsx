@@ -89,6 +89,10 @@ export const useStylesHome = makeStyles(() => ({
 
     tweetBlock: {
         padding: '10px 15px',
+        '&:hover': {
+            backgroundColor: 'rgb(245, 248, 250)',
+            cursor: 'pointer',
+        },
     },
 
     tweetUserName: {
