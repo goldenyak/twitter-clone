@@ -80,7 +80,7 @@ export const useStylesHome = makeStyles(() => ({
     },
 
     tweetsHeader: {
-        padding: '10px 15px',
+        padding: '20px 15px 10px 15px',
     },
 
     tweetsHeaderText: {
@@ -230,11 +230,21 @@ export const Home = () => {
                         <Paper className={classes.tweetsHeader} variant="outlined">
                             <Typography className={classes.tweetsHeaderText} variant="h6">Главная</Typography>
                         </Paper>
-                        <Tweet classes={classes}/>
-                        <Tweet classes={classes}/>
-                        <Tweet classes={classes}/>
-                        <Tweet classes={classes}/>
-                        <Tweet classes={classes}/>
+                        <Tweet classes={classes}
+                               text="Впереди выходные: как насчет Комаровки? Узнали, что и по каким ценам там сейчас."
+                        user={{
+                            fullName: "Ivan",
+                            userName: "vanya",
+                            avatarUrl: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                        }}/>
+                        <Tweet classes={classes}
+                               text="ДАННОЕ СООБЩЕНИЕ (МАТЕРИАЛ) СОЗДАНО И (ИЛИ) РАСПРОСТРАНЕНО ИНОСТРАННЫМ СРЕДСТВОМ МАССОВОЙ ИНФОРМАЦИИ, ВЫПОЛНЯЮЩИМ ФУНКЦИИ ИНОСТРАННОГО АГЕНТА, И (ИЛИ) РОССИЙСКИМ ЮРИДИЧЕСКИМ ЛИЦОМ, ВЫПОЛНЯЮЩИМ ФУНКЦИИ ИНОСТРАННОГО АГЕНТА."
+                               user={{
+                                   fullName: "Meduza",
+                                   userName: "meduzaproject",
+                                   avatarUrl: "https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                               }}/>
+
                     </Paper>
                 </div>
 
