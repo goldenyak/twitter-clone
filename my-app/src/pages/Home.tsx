@@ -11,22 +11,24 @@ import ProfileIcon from '@mui/icons-material/PermIdentityOutlined';
 import Paper from '@mui/material/Paper';
 import Avatar from '@mui/material/Avatar';
 import TextField from '@mui/material/TextField';
+import {Container, Grid} from "@mui/material";
 
 export const useStylesHome = makeStyles(() => ({
     body: {
-        paddingLeft: '250px',
-        paddingRight: '250px',
+        paddingLeft: '200px',
+        paddingRight: '200px',
     },
 
     wrapper: {
         display: 'flex',
+        justifyContent: 'space-between',
     },
 
     sideBar: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'start',
-        width: '15%',
+        // width: '15%',
         padding: '10px 10px 10px 25px',
     },
 
@@ -38,9 +40,11 @@ export const useStylesHome = makeStyles(() => ({
     },
 
     contentBlocksCenter: {
-        flex: 'auto',
-        alignItems: 'center',
-        justifyContent: 'space-between',
+        width: '700px',
+        marginLeft: '50px',
+        // // flex: 'auto',
+        // alignItems: 'center',
+        // justifyContent: 'space-between',
         '& .MuiPaper-root': {
             borderRadius: '0',
             borderBottom: '0',
@@ -49,7 +53,7 @@ export const useStylesHome = makeStyles(() => ({
     },
 
     contentBlocksRight: {
-        width: '20%',
+        // width: '20%',
         padding: '10px 50px',
     },
 
@@ -79,7 +83,7 @@ export const useStylesHome = makeStyles(() => ({
     },
 
     tweetBlock: {
-      padding: '10px',
+        padding: '10px',
     },
 
     searchFieldInput: {
@@ -104,7 +108,7 @@ export const Home = () => {
     const classes = useStylesHome();
 
     return (
-        <div className={classes.body}>
+        <Container maxWidth="lg">
             <div className={classes.wrapper}>
                 <div className={classes.sideBar}>
                     <IconButton>
@@ -112,43 +116,43 @@ export const Home = () => {
                     </IconButton>
                     <div style={{display: 'flex', alignItems: 'center'}}>
                         <IconButton>
-                            <HomeIcon sx={{ color: '#263238' }}/>
+                            <HomeIcon sx={{color: '#263238'}}/>
                         </IconButton>
                         <Typography className={classes.sideBarText} variant="h6">Главная</Typography>
                     </div>
                     <div style={{display: 'flex', alignItems: 'center'}}>
                         <IconButton>
-                            <TagIcon sx={{ color: '#263238' }}/>
+                            <TagIcon sx={{color: '#263238'}}/>
                         </IconButton>
                         <Typography className={classes.sideBarText} variant="h6">Поиск</Typography>
                     </div>
                     <div style={{display: 'flex', alignItems: 'center'}}>
                         <IconButton>
-                            <NotificationsIcon sx={{ color: '#263238' }}/>
+                            <NotificationsIcon sx={{color: '#263238'}}/>
                         </IconButton>
                         <Typography className={classes.sideBarText} variant="h6">Уведомления</Typography>
                     </div>
                     <div style={{display: 'flex', alignItems: 'center'}}>
                         <IconButton>
-                            <EmailIcon sx={{ color: '#263238' }}/>
+                            <EmailIcon sx={{color: '#263238'}}/>
                         </IconButton>
                         <Typography className={classes.sideBarText} variant="h6">Сообщения</Typography>
                     </div>
                     <div style={{display: 'flex', alignItems: 'center'}}>
                         <IconButton>
-                            <BookmarkIcon sx={{ color: '#263238' }}/>
+                            <BookmarkIcon sx={{color: '#263238'}}/>
                         </IconButton>
                         <Typography className={classes.sideBarText} variant="h6">Закладки</Typography>
                     </div>
                     <div style={{display: 'flex', alignItems: 'center'}}>
                         <IconButton>
-                            <ListIcon sx={{ color: '#263238' }}/>
+                            <ListIcon sx={{color: '#263238'}}/>
                         </IconButton>
                         <Typography className={classes.sideBarText} variant="h6">Список</Typography>
                     </div>
                     <div style={{display: 'flex', alignItems: 'center'}}>
                         <IconButton>
-                            <ProfileIcon sx={{ color: '#263238' }}/>
+                            <ProfileIcon sx={{color: '#263238'}}/>
                         </IconButton>
                         <Typography className={classes.sideBarText} variant="h6">Пользователи</Typography>
                     </div>
@@ -161,15 +165,33 @@ export const Home = () => {
                             <Typography className={classes.tweetsHeaderText} variant="h6">Главная</Typography>
                         </Paper>
                         <Paper className={classes.tweetBlock} variant="outlined">
-                            <Avatar alt="Cat" src="https://media.istockphoto.com/photos/kitten-at-home-garden-wall-picture-id1273661469?b=1&k=20&m=1273661469&s=170667a&w=0&h=K-b-88J89oSBIwbD0WhhDoOvybcbjfePJoOHS0grHHA=" />
+                            <Grid container spacing={3}>
+                                <Grid item xs={1}>
+                                    <Avatar alt="Cat"
+                                            src="https://media.istockphoto.com/photos/kitten-at-home-garden-wall-picture-id1273661469?b=1&k=20&m=1273661469&s=170667a&w=0&h=K-b-88J89oSBIwbD0WhhDoOvybcbjfePJoOHS0grHHA="/>
+                                </Grid>
+                                <Grid item xs={11}>
+                                    <Typography><b>Apple Pro</b> <span>@aaplpro</span>
+                                        <Typography>
+                                            Стив Возняк подписал редкий образец материнской платы Apple Computer I 1976
+                                            года на встрече в Дубае
+                                            Ждем теперь новый лот на аукционе Улыбающееся лицо с открытым ртом и в
+                                            холодном поту
+                                        </Typography>
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+
                         </Paper>
                     </Paper>
                 </div>
+
                 <div className={classes.contentBlocksRight}>
                     <TextField className={classes.searchFieldInput} placeholder="Поиск" variant="standard" fullWidth/>
                 </div>
             </div>
-        </div>
+        </Container>
+
 
     );
 };
