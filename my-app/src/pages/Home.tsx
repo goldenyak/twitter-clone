@@ -9,6 +9,9 @@ import BookmarkIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import ListIcon from '@mui/icons-material/FormatListBulletedOutlined';
 import ProfileIcon from '@mui/icons-material/PermIdentityOutlined';
 import ReplyIcon from '@mui/icons-material/MapsUgcOutlined';
+import RepeatIcon from '@mui/icons-material/RepeatOutlined';
+import LikeIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import ShareIcon from '@mui/icons-material/IosShareOutlined';
 import Paper from '@mui/material/Paper';
 import Avatar from '@mui/material/Avatar';
 import TextField from '@mui/material/TextField';
@@ -89,7 +92,15 @@ export const useStylesHome = makeStyles(() => ({
     },
 
     tweetUserName: {
-      color: grey[400],
+        color: grey[400],
+    },
+
+    tweetIconGroup: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        marginTop: '5px',
+        position: 'relative',
+        left: '-10px',
     },
 
     searchFieldInput: {
@@ -116,101 +127,101 @@ export const Home = () => {
     return (
         <Container maxWidth="lg">
 
-                <div className={classes.wrapper}>
-                    <div className={classes.sideBar}>
+            <div className={classes.wrapper}>
+                <div className={classes.sideBar}>
+                    <IconButton>
+                        <TwitterIcon color="primary" fontSize='large'/>
+                    </IconButton>
+                    <div style={{display: 'flex', alignItems: 'center'}}>
                         <IconButton>
-                            <TwitterIcon color="primary" fontSize='large'/>
+                            <HomeIcon sx={{color: '#263238'}}/>
                         </IconButton>
-                        <div style={{display: 'flex', alignItems: 'center'}}>
-                            <IconButton>
-                                <HomeIcon sx={{color: '#263238'}}/>
-                            </IconButton>
-                            <Typography className={classes.sideBarText} variant="h6">Главная</Typography>
-                        </div>
-                        <div style={{display: 'flex', alignItems: 'center'}}>
-                            <IconButton>
-                                <TagIcon sx={{color: '#263238'}}/>
-                            </IconButton>
-                            <Typography className={classes.sideBarText} variant="h6">Поиск</Typography>
-                        </div>
-                        <div style={{display: 'flex', alignItems: 'center'}}>
-                            <IconButton>
-                                <NotificationsIcon sx={{color: '#263238'}}/>
-                            </IconButton>
-                            <Typography className={classes.sideBarText} variant="h6">Уведомления</Typography>
-                        </div>
-                        <div style={{display: 'flex', alignItems: 'center'}}>
-                            <IconButton>
-                                <EmailIcon sx={{color: '#263238'}}/>
-                            </IconButton>
-                            <Typography className={classes.sideBarText} variant="h6">Сообщения</Typography>
-                        </div>
-                        <div style={{display: 'flex', alignItems: 'center'}}>
-                            <IconButton>
-                                <BookmarkIcon sx={{color: '#263238'}}/>
-                            </IconButton>
-                            <Typography className={classes.sideBarText} variant="h6">Закладки</Typography>
-                        </div>
-                        <div style={{display: 'flex', alignItems: 'center'}}>
-                            <IconButton>
-                                <ListIcon sx={{color: '#263238'}}/>
-                            </IconButton>
-                            <Typography className={classes.sideBarText} variant="h6">Список</Typography>
-                        </div>
-                        <div style={{display: 'flex', alignItems: 'center'}}>
-                            <IconButton>
-                                <ProfileIcon sx={{color: '#263238'}}/>
-                            </IconButton>
-                            <Typography className={classes.sideBarText} variant="h6">Пользователи</Typography>
-                        </div>
+                        <Typography className={classes.sideBarText} variant="h6">Главная</Typography>
                     </div>
-
-
-                    <div className={classes.contentBlocksCenter}>
-                        <Paper className={classes.tweetsWrapper} variant="outlined">
-                            <Paper className={classes.tweetsHeader} variant="outlined">
-                                <Typography className={classes.tweetsHeaderText} variant="h6">Главная</Typography>
-                            </Paper>
-                            <Paper className={classes.tweetBlock} variant="outlined">
-                                <Grid container spacing={3}>
-                                    <Grid item xs={1}>
-                                        <Avatar alt="Cat"
-                                                src="https://media.istockphoto.com/photos/kitten-at-home-garden-wall-picture-id1273661469?b=1&k=20&m=1273661469&s=170667a&w=0&h=K-b-88J89oSBIwbD0WhhDoOvybcbjfePJoOHS0grHHA="/>
-                                    </Grid>
-                                    <Grid item xs={11}>
-                                        <Typography><b>Apple Pro</b> <span className={classes.tweetUserName}>@aaplpro</span>
-                                            <Typography style={{marginTop: '10px'}}>
-                                                Стив Возняк подписал редкий образец материнской платы Apple Computer I 1976
-                                                года на встрече в Дубае
-                                                Ждем теперь новый лот на аукционе Улыбающееся лицо с открытым ртом и в
-                                                холодном поту
-                                            </Typography>
-                                            <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                                                <IconButton>
-                                                    <ReplyIcon/>
-                                                </IconButton>
-                                                <IconButton>
-                                                    <ReplyIcon/>
-                                                </IconButton>
-                                                <IconButton>
-                                                    <ReplyIcon/>
-                                                </IconButton>
-                                                <IconButton>
-                                                    <ReplyIcon/>
-                                                </IconButton>
-                                            </div>
-                                        </Typography>
-                                    </Grid>
-                                </Grid>
-
-                            </Paper>
-                        </Paper>
+                    <div style={{display: 'flex', alignItems: 'center'}}>
+                        <IconButton>
+                            <TagIcon sx={{color: '#263238'}}/>
+                        </IconButton>
+                        <Typography className={classes.sideBarText} variant="h6">Поиск</Typography>
                     </div>
-
-                    <div className={classes.contentBlocksRight}>
-                        <TextField className={classes.searchFieldInput} placeholder="Поиск" variant="standard" fullWidth/>
+                    <div style={{display: 'flex', alignItems: 'center'}}>
+                        <IconButton>
+                            <NotificationsIcon sx={{color: '#263238'}}/>
+                        </IconButton>
+                        <Typography className={classes.sideBarText} variant="h6">Уведомления</Typography>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center'}}>
+                        <IconButton>
+                            <EmailIcon sx={{color: '#263238'}}/>
+                        </IconButton>
+                        <Typography className={classes.sideBarText} variant="h6">Сообщения</Typography>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center'}}>
+                        <IconButton>
+                            <BookmarkIcon sx={{color: '#263238'}}/>
+                        </IconButton>
+                        <Typography className={classes.sideBarText} variant="h6">Закладки</Typography>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center'}}>
+                        <IconButton>
+                            <ListIcon sx={{color: '#263238'}}/>
+                        </IconButton>
+                        <Typography className={classes.sideBarText} variant="h6">Список</Typography>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center'}}>
+                        <IconButton>
+                            <ProfileIcon sx={{color: '#263238'}}/>
+                        </IconButton>
+                        <Typography className={classes.sideBarText} variant="h6">Пользователи</Typography>
                     </div>
                 </div>
+
+
+                <div className={classes.contentBlocksCenter}>
+                    <Paper className={classes.tweetsWrapper} variant="outlined">
+                        <Paper className={classes.tweetsHeader} variant="outlined">
+                            <Typography className={classes.tweetsHeaderText} variant="h6">Главная</Typography>
+                        </Paper>
+                        <Paper className={classes.tweetBlock} variant="outlined">
+                            <Grid container spacing={3}>
+                                <Grid item xs={1}>
+                                    <Avatar alt="Cat"
+                                            src="https://media.istockphoto.com/photos/kitten-at-home-garden-wall-picture-id1273661469?b=1&k=20&m=1273661469&s=170667a&w=0&h=K-b-88J89oSBIwbD0WhhDoOvybcbjfePJoOHS0grHHA="/>
+                                </Grid>
+                                <Grid item xs={11}>
+                                    <Typography><b>Apple Pro</b> <span className={classes.tweetUserName}>@aaplpro</span>
+                                        <Typography style={{marginTop: '10px'}}>
+                                            Стив Возняк подписал редкий образец материнской платы Apple Computer I 1976
+                                            года на встрече в Дубае
+                                            Ждем теперь новый лот на аукционе Улыбающееся лицо с открытым ртом и в
+                                            холодном поту
+                                        </Typography>
+                                        <div className={classes.tweetIconGroup}>
+                                            <IconButton>
+                                                <ReplyIcon fontSize="small"/>
+                                            </IconButton>
+                                            <IconButton>
+                                                <RepeatIcon fontSize="small"/>
+                                            </IconButton>
+                                            <IconButton>
+                                                <LikeIcon fontSize="small"/>
+                                            </IconButton>
+                                            <IconButton>
+                                                <ShareIcon fontSize="small"/>
+                                            </IconButton>
+                                        </div>
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+
+                        </Paper>
+                    </Paper>
+                </div>
+
+                <div className={classes.contentBlocksRight}>
+                    <TextField className={classes.searchFieldInput} placeholder="Поиск" variant="standard" fullWidth/>
+                </div>
+            </div>
 
         </Container>
 
