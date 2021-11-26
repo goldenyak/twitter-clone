@@ -18,6 +18,7 @@ import TextField from '@mui/material/TextField';
 import {Container, Grid} from "@mui/material";
 import {grey} from "@mui/material/colors";
 import {Tweet} from "../components/Tweet/Tweet";
+import {SideMenu} from "../components/SideMenu/SideMenu";
 
 export const useStylesHome = makeStyles(() => ({
     body: {
@@ -174,57 +175,8 @@ export const Home = () => {
 
     return (
         <Container maxWidth="lg">
-
             <div className={classes.wrapper}>
-                <div className={classes.sideBar}>
-                    <IconButton>
-                        <TwitterIcon color="primary" fontSize='large'/>
-                    </IconButton>
-                    <div style={{display: 'flex', alignItems: 'center'}}>
-                        <IconButton>
-                            <HomeIcon sx={{color: '#263238'}}/>
-                        </IconButton>
-                        <Typography className={classes.sideBarText} variant="h6">Главная</Typography>
-                    </div>
-                    <div style={{display: 'flex', alignItems: 'center'}}>
-                        <IconButton>
-                            <TagIcon sx={{color: '#263238'}}/>
-                        </IconButton>
-                        <Typography className={classes.sideBarText} variant="h6">Поиск</Typography>
-                    </div>
-                    <div style={{display: 'flex', alignItems: 'center'}}>
-                        <IconButton>
-                            <NotificationsIcon sx={{color: '#263238'}}/>
-                        </IconButton>
-                        <Typography className={classes.sideBarText} variant="h6">Уведомления</Typography>
-                    </div>
-                    <div style={{display: 'flex', alignItems: 'center'}}>
-                        <IconButton>
-                            <EmailIcon sx={{color: '#263238'}}/>
-                        </IconButton>
-                        <Typography className={classes.sideBarText} variant="h6">Сообщения</Typography>
-                    </div>
-                    <div style={{display: 'flex', alignItems: 'center'}}>
-                        <IconButton>
-                            <BookmarkIcon sx={{color: '#263238'}}/>
-                        </IconButton>
-                        <Typography className={classes.sideBarText} variant="h6">Закладки</Typography>
-                    </div>
-                    <div style={{display: 'flex', alignItems: 'center'}}>
-                        <IconButton>
-                            <ListIcon sx={{color: '#263238'}}/>
-                        </IconButton>
-                        <Typography className={classes.sideBarText} variant="h6">Список</Typography>
-                    </div>
-                    <div style={{display: 'flex', alignItems: 'center'}}>
-                        <IconButton>
-                            <ProfileIcon sx={{color: '#263238'}}/>
-                        </IconButton>
-                        <Typography className={classes.sideBarText} variant="h6">Пользователи</Typography>
-                    </div>
-                </div>
-
-
+            <SideMenu classes={classes}/>
                 <div className={classes.contentBlocksCenter}>
                     <Paper className={classes.tweetsWrapper} variant="outlined">
                         <Paper className={classes.tweetsHeader} variant="outlined">
