@@ -20,46 +20,32 @@ export const SideMenu: React.FC<SideMenuProps> = ({classes}: SideMenuProps): Rea
             <IconButton>
                 <TwitterIcon color="primary" fontSize='large'/>
             </IconButton>
-            <div style={{display: 'flex', alignItems: 'center'}}>
-                <IconButton>
-                    <HomeIcon sx={{color: '#263238'}}/>
-                </IconButton>
+            <div className={classes.sideBarItem}>
+                <HomeIcon sx={{color: '#263238'}}/>
                 <Typography className={classes.sideBarText} variant="h6">Главная</Typography>
             </div>
-            <div style={{display: 'flex', alignItems: 'center'}}>
-                <IconButton>
-                    <TagIcon sx={{color: '#263238'}}/>
-                </IconButton>
+            <div className={classes.sideBarItem}>
+                <TagIcon sx={{color: '#263238'}}/>
                 <Typography className={classes.sideBarText} variant="h6">Поиск</Typography>
             </div>
-            <div style={{display: 'flex', alignItems: 'center'}}>
-                <IconButton>
-                    <NotificationsIcon sx={{color: '#263238'}}/>
-                </IconButton>
+            <div className={classes.sideBarItem}>
+                <NotificationsIcon sx={{color: '#263238'}}/>
                 <Typography className={classes.sideBarText} variant="h6">Уведомления</Typography>
             </div>
-            <div style={{display: 'flex', alignItems: 'center'}}>
-                <IconButton>
-                    <EmailIcon sx={{color: '#263238'}}/>
-                </IconButton>
+            <div className={classes.sideBarItem}>
+                <EmailIcon sx={{color: '#263238'}}/>
                 <Typography className={classes.sideBarText} variant="h6">Сообщения</Typography>
             </div>
-            <div style={{display: 'flex', alignItems: 'center'}}>
-                <IconButton>
-                    <BookmarkIcon sx={{color: '#263238'}}/>
-                </IconButton>
+            <div className={classes.sideBarItem}>
+                <BookmarkIcon sx={{color: '#263238'}}/>
                 <Typography className={classes.sideBarText} variant="h6">Закладки</Typography>
             </div>
-            <div style={{display: 'flex', alignItems: 'center'}}>
-                <IconButton>
-                    <ListIcon sx={{color: '#263238'}}/>
-                </IconButton>
+            <div className={classes.sideBarItem}>
+                <ListIcon sx={{color: '#263238'}}/>
                 <Typography className={classes.sideBarText} variant="h6">Список</Typography>
             </div>
-            <div style={{display: 'flex', alignItems: 'center'}}>
-                <IconButton>
-                    <ProfileIcon sx={{color: '#263238'}}/>
-                </IconButton>
+            <div className={classes.sideBarItem}>
+                <ProfileIcon sx={{color: '#263238'}}/>
                 <Typography className={classes.sideBarText} variant="h6">Пользователи</Typography>
             </div>
         </div>
