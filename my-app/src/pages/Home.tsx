@@ -121,7 +121,50 @@ export const useStylesHome = makeStyles(() => ({
                 border: '0',
             },
         },
+    },
 
+    tweetBlockIcon1: {
+        '&:hover': {
+            '& .MuiSvgIcon-root': {
+                fill: 'blue',
+            },
+            '& .MuiTouchRipple-root': {
+                color: 'blue',
+            },
+        },
+    },
+
+    tweetBlockIcon2: {
+        '&:hover': {
+            '& .MuiSvgIcon-root': {
+                fill: 'green',
+            },
+            '& .MuiTouchRipple-root': {
+                color: 'green',
+            },
+        },
+    },
+
+    tweetBlockIcon3: {
+        '&:hover': {
+            '& .MuiSvgIcon-root': {
+                fill: 'red',
+            },
+            '& .MuiTouchRipple-root': {
+                color: 'red',
+            },
+        },
+    },
+
+    tweetBlockIcon4: {
+        '&:hover': {
+            '& .MuiSvgIcon-root': {
+                fill: 'blue',
+            },
+            '& .MuiTouchRipple-root': {
+                color: 'blue',
+            },
+        },
     },
 }));
 
@@ -202,19 +245,19 @@ export const Home = () => {
                                         </Typography>
                                         <div className={classes.tweetIconGroup}>
                                             <div style={{display: 'flex', alignItems: 'center'}}>
-                                                <IconButton>
+                                                <IconButton className={classes.tweetBlockIcon1}>
                                                     <ReplyIcon fontSize="small"/>
                                                 </IconButton>
                                                 <span style={{fontSize: '12px'}}>1</span>
                                             </div>
 
-                                            <IconButton>
+                                            <IconButton className={classes.tweetBlockIcon2}>
                                                 <RepeatIcon fontSize="small"/>
                                             </IconButton>
-                                            <IconButton>
+                                            <IconButton className={classes.tweetBlockIcon3}>
                                                 <LikeIcon fontSize="small"/>
                                             </IconButton>
-                                            <IconButton>
+                                            <IconButton className={classes.tweetBlockIcon4}>
                                                 <ShareIcon fontSize="small"/>
                                             </IconButton>
                                         </div>
