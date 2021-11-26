@@ -12,6 +12,7 @@ import Paper from '@mui/material/Paper';
 import Avatar from '@mui/material/Avatar';
 import TextField from '@mui/material/TextField';
 import {Container, Grid} from "@mui/material";
+import {grey} from "@mui/material/colors";
 
 export const useStylesHome = makeStyles(() => ({
     body: {
@@ -83,7 +84,11 @@ export const useStylesHome = makeStyles(() => ({
     },
 
     tweetBlock: {
-        padding: '10px',
+        padding: '10px 15px',
+    },
+
+    tweetUserName: {
+      color: grey[400],
     },
 
     searchFieldInput: {
@@ -171,8 +176,8 @@ export const Home = () => {
                                             src="https://media.istockphoto.com/photos/kitten-at-home-garden-wall-picture-id1273661469?b=1&k=20&m=1273661469&s=170667a&w=0&h=K-b-88J89oSBIwbD0WhhDoOvybcbjfePJoOHS0grHHA="/>
                                 </Grid>
                                 <Grid item xs={11}>
-                                    <Typography><b>Apple Pro</b> <span>@aaplpro</span>
-                                        <Typography>
+                                    <Typography><b>Apple Pro</b> <span className={classes.tweetUserName}>@aaplpro</span>
+                                        <Typography style={{marginTop: '10px'}}>
                                             Стив Возняк подписал редкий образец материнской платы Apple Computer I 1976
                                             года на встрече в Дубае
                                             Ждем теперь новый лот на аукционе Улыбающееся лицо с открытым ртом и в
