@@ -37,8 +37,13 @@ export const useStylesHome = makeStyles(() => ({
         '&:hover': {
             cursor: 'pointer',
             backgroundColor: 'rgba(15, 20, 25, 0.1)',
-
-        }
+            '& h6': {
+              color: '#1b76d2',
+            },
+            '& svg path': {
+                fill: "#1b76d2",
+            },
+        },
     },
 
     sideBarText: {
