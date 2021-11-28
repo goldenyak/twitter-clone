@@ -38,10 +38,10 @@ export const useStylesHome = makeStyles(() => ({
             cursor: 'pointer',
             backgroundColor: 'rgba(15, 20, 25, 0.1)',
             '& h6': {
-              color: '#1b76d2',
+                color: '#1b76d2', // Добавляем цвет тексту в меню при hover
             },
             '& svg path': {
-                fill: "#1b76d2",
+                fill: "#1b76d2", // Добавляем цвет иконке в меню при hover
             },
         },
     },
@@ -55,10 +55,6 @@ export const useStylesHome = makeStyles(() => ({
 
     contentBlocksCenter: {
         width: '600px',
-        // marginLeft: '50px',
-        // // flex: 'auto',
-        // alignItems: 'center',
-        // justifyContent: 'space-between',
         '& .MuiPaper-root': {
             borderRadius: '0',
             borderBottom: '0',
@@ -67,7 +63,6 @@ export const useStylesHome = makeStyles(() => ({
     },
 
     contentBlocksRight: {
-        // width: '20%',
         padding: '10px 50px',
     },
 
