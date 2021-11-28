@@ -29,12 +29,15 @@ export const useStylesHome = makeStyles(() => ({
     sideBarItem: {
         display: 'flex',
         alignItems: 'center',
-        padding: '0 10px',
-        height: '50px',
+        padding: '0 15px',
+        marginBottom: '10px',
+        height: '45px',
+        borderRadius: '30px',
+        transition: 'background-color 0.15s ease-in-out',
         '&:hover': {
             cursor: 'pointer',
             backgroundColor: 'rgba(15, 20, 25, 0.1)',
-            borderRadius: '30px',
+
         }
     },
 
