@@ -3,7 +3,7 @@ import {makeStyles, Button, Typography, IconButton} from '@material-ui/core';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import {Container, Grid} from "@mui/material";
-import {grey} from "@mui/material/colors";
+import {green, grey} from "@mui/material/colors";
 import {Tweet} from "../components/Tweet/Tweet";
 import {SideMenu} from "../components/SideMenu/SideMenu";
 import theme from "../theme";
@@ -107,7 +107,6 @@ export const useStylesHome = makeStyles((theme) => ({
     tweetAvatar: {
         width: '40px',
         height: '40px',
-        // marginLeft: '17px',
         marginRight: '10px',
 
     },
@@ -166,6 +165,7 @@ export const useStylesHome = makeStyles((theme) => ({
 
     tweetUserName: {
         color: grey[400],
+
     },
 
     tweetIconGroup: {
@@ -173,7 +173,7 @@ export const useStylesHome = makeStyles((theme) => ({
         justifyContent: 'space-between',
         marginTop: '5px',
         position: 'relative',
-        left: '-10px',
+        // left: '-5px',
     },
 
     tweetBlockIcon1: {
@@ -224,23 +224,6 @@ export const useStylesHome = makeStyles((theme) => ({
         padding: '10px 50px',
     },
 
-
-    // searchFieldInput: {
-    //     border: '0',
-    //     '& .MuiOutlinedInput-root': {
-    //         height: '35px',
-    //         backgroundColor: '#e1e0e0',
-    //         borderRadius: '30px',
-    //         outline: 'none',
-    //         border: '1px solid black',
-    //         '&:hover': {
-    //             backgroundColor: 'white',
-    //             outline: 'none',
-    //             border: '0',
-    //         },
-    //     },
-    // },
-
     rightSideBlock: {
         backgroundColor: '#F5F8FA',
         borderRadius: 15,
@@ -249,7 +232,6 @@ export const useStylesHome = makeStyles((theme) => ({
             paddingTop: 0,
         },
     },
-
 
     rightSideBlockHeader: {
         borderTop: 0,
@@ -262,6 +244,7 @@ export const useStylesHome = makeStyles((theme) => ({
             fontWeight: 800,
         },
     },
+
     rightSideBlockItem: {
         cursor: 'pointer',
         '& .MuiTypography-body1': {
@@ -369,7 +352,6 @@ export const Home = () => {
                                     }
                                 />
                             </ListItem>
-                            <Divider component="li"/>
                         </List>
                     </Paper>
                     <Paper className={classes.rightSideBlock}>
@@ -396,7 +378,6 @@ export const Home = () => {
                                     <PersonAddIcon/>
                                 </Button>
                             </ListItem>
-                            <Divider component="li"/>
                         </List>
                     </Paper>
                 </div>

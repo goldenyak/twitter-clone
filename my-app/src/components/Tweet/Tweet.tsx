@@ -28,10 +28,14 @@ export const Tweet: React.FC<TweetProps> = ({classes, user, text}: TweetProps): 
                             src={user.avatarUrl}/>
                 </Grid>
                 <Grid item xs={11}>
-                    <Typography><b>{user.fullName}</b> <span className={classes.tweetUserName}>@{user.userName}</span>
-                        <Typography style={{marginTop: '10px'}}>
-                            {text}
+                    <div style={{marginLeft: '15px'}}>
+                        <Typography><b>{user.fullName}</b> <span className={classes.tweetUserName}>@{user.userName}</span>
+                            <Typography style={{marginTop: '10px'}}>
+                                {text}
+                            </Typography>
                         </Typography>
+                    </div>
+
                         <div className={classes.tweetIconGroup}>
                             <div style={{display: 'flex', alignItems: 'center'}}>
                                 <IconButton className={classes.tweetBlockIcon1}>
@@ -50,7 +54,7 @@ export const Tweet: React.FC<TweetProps> = ({classes, user, text}: TweetProps): 
                                 <ShareIcon fontSize="small"/>
                             </IconButton>
                         </div>
-                    </Typography>
+
                 </Grid>
             </Grid>
         </Paper>
