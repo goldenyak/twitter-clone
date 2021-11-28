@@ -8,6 +8,17 @@ import {Tweet} from "../components/Tweet/Tweet";
 import {SideMenu} from "../components/SideMenu/SideMenu";
 import theme from "../theme";
 import {AddTweetForm} from "../components/AddTweetForm/AddTweetForm";
+import PersonAddIcon from '@material-ui/icons/PersonAddOutlined';
+import {SearchTextField} from "../components/SearchTextField/SearchTextField";
+import SearchIcon from '@material-ui/icons/SearchOutlined';
+import ListItemText from '@material-ui/core/ListItemText/ListItemText';
+import List from '@material-ui/core/List/List';
+import ListItem from '@material-ui/core/ListItem/ListItem';
+import Divider from '@material-ui/core/Divider/Divider';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar/ListItemAvatar';
+import Avatar from '@material-ui/core/Avatar/Avatar';
+import InputAdornment from '@mui/material/InputAdornment';
+
 
 export const useStylesHome = makeStyles((theme) => ({
     body: {
@@ -103,10 +114,8 @@ export const useStylesHome = makeStyles((theme) => ({
 
     addFormBody: {
         display: 'flex',
-        width: '80%',
         margin: '0 auto',
         padding: '20px',
-        borderBottom: '1px solid rgb(239, 243, 244)',
     },
 
     addFormTextarea: {
@@ -167,28 +176,6 @@ export const useStylesHome = makeStyles((theme) => ({
         left: '-10px',
     },
 
-    contentBlocksRight: {
-        padding: '10px 50px',
-    },
-
-
-
-    searchFieldInput: {
-        border: '0',
-        '& .MuiOutlinedInput-root': {
-            height: '35px',
-            backgroundColor: '#e1e0e0',
-            borderRadius: '30px',
-            outline: 'none',
-            border: '1px solid black',
-            '&:hover': {
-                backgroundColor: 'white',
-                outline: 'none',
-                border: '0',
-            },
-        },
-    },
-
     tweetBlockIcon1: {
         '&:hover': {
             '& .MuiSvgIcon-root': {
@@ -232,6 +219,65 @@ export const useStylesHome = makeStyles((theme) => ({
             },
         },
     },
+
+    contentBlocksRight: {
+        padding: '10px 50px',
+    },
+
+
+    // searchFieldInput: {
+    //     border: '0',
+    //     '& .MuiOutlinedInput-root': {
+    //         height: '35px',
+    //         backgroundColor: '#e1e0e0',
+    //         borderRadius: '30px',
+    //         outline: 'none',
+    //         border: '1px solid black',
+    //         '&:hover': {
+    //             backgroundColor: 'white',
+    //             outline: 'none',
+    //             border: '0',
+    //         },
+    //     },
+    // },
+
+    rightSideBlock: {
+        backgroundColor: '#F5F8FA',
+        borderRadius: 15,
+        marginTop: 20,
+        '& .MuiList-root': {
+            paddingTop: 0,
+        },
+    },
+
+
+    rightSideBlockHeader: {
+        borderTop: 0,
+        borderLeft: 0,
+        borderRight: 0,
+        backgroundColor: 'transparent',
+        padding: '13px 18px',
+        '& b': {
+            fontSize: 20,
+            fontWeight: 800,
+        },
+    },
+    rightSideBlockItem: {
+        cursor: 'pointer',
+        '& .MuiTypography-body1': {
+            fontWeight: 700,
+        },
+        '& .MuiListItemAvatar-root': {
+            minWidth: 50,
+        },
+        '& .MuiListItemText-root': {
+            margin: 0,
+        },
+        '&:hover': {
+            backgroundColor: '#edf3f6',
+        },
+    },
+
 }));
 
 export const Home = () => {
@@ -240,7 +286,9 @@ export const Home = () => {
     return (
         <Container maxWidth="lg">
             <div className={classes.wrapper}>
+                {/*Навигация/меню*/}
                 <SideMenu classes={classes}/>
+                {/*Центральный блок твитов*/}
                 <div className={classes.contentBlocksCenter}>
                     <Paper className={classes.tweetsWrapper} variant="outlined">
                         <Paper className={classes.tweetsHeader} variant="outlined">
@@ -270,12 +318,89 @@ export const Home = () => {
                                }}/>
                     </Paper>
                 </div>
-
+                {/*Блок с поиском*/}
                 <div className={classes.contentBlocksRight}>
-                    <TextField className={classes.searchFieldInput} placeholder="Поиск" variant="standard" fullWidth/>
+                    <SearchTextField
+                        fullWidth
+                        variant="outlined"
+                        placeholder="Поиск"
+                        InputProps={{
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <SearchIcon/>
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+                    <Paper className={classes.rightSideBlock}>
+                        <Paper className={classes.rightSideBlockHeader} variant="outlined">
+                            <b>Актуальные темы</b>
+                        </Paper>
+                        <List>
+                            <ListItem className={classes.rightSideBlockItem}>
+                                <ListItemText
+                                    primary="Санкт-Петербург"
+                                    secondary={
+                                        <Typography component="span" variant="body2" color="textSecondary">
+                                            Твитов: 3 331
+                                        </Typography>
+                                    }
+                                />
+                            </ListItem>
+                            <Divider component="li"/>
+                            <ListItem className={classes.rightSideBlockItem}>
+                                <ListItemText
+                                    primary="#коронавирус"
+                                    secondary={
+                                        <Typography component="span" variant="body2" color="textSecondary">
+                                            Твитов: 163 122
+                                        </Typography>
+                                    }
+                                />
+                            </ListItem>
+                            <Divider component="li"/>
+                            <ListItem className={classes.rightSideBlockItem}>
+                                <ListItemText
+                                    primary="Беларусь"
+                                    secondary={
+                                        <Typography component="span" variant="body2" color="textSecondary">
+                                            Твитов: 13 554
+                                        </Typography>
+                                    }
+                                />
+                            </ListItem>
+                            <Divider component="li"/>
+                        </List>
+                    </Paper>
+                    <Paper className={classes.rightSideBlock}>
+                        <Paper className={classes.rightSideBlockHeader} variant="outlined">
+                            <b>Кого читать</b>
+                        </Paper>
+                        <List>
+                            <ListItem className={classes.rightSideBlockItem}>
+                                <ListItemAvatar>
+                                    <Avatar
+                                        alt="Remy Sharp"
+                                        src="https://pbs.twimg.com/profile_images/1267938486566428673/US6KRPbA_normal.jpg"
+                                    />
+                                </ListItemAvatar>
+                                <ListItemText
+                                    primary="Dock Of Shame"
+                                    secondary={
+                                        <Typography component="span" variant="body2" color="textSecondary">
+                                            @FavDockOfShame
+                                        </Typography>
+                                    }
+                                />
+                                <Button color="primary">
+                                    <PersonAddIcon/>
+                                </Button>
+                            </ListItem>
+                            <Divider component="li"/>
+                        </List>
+                    </Paper>
                 </div>
             </div>
-
         </Container>
 
 
