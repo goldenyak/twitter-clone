@@ -1,5 +1,5 @@
 import React from "react";
-import {IconButton, Typography} from "@material-ui/core";
+import {Button, IconButton, Typography} from "@material-ui/core";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import HomeIcon from "@mui/icons-material/Home";
 import TagIcon from "@mui/icons-material/Tag";
@@ -48,6 +48,11 @@ export const SideMenu: React.FC<SideMenuProps> = ({classes}: SideMenuProps): Rea
                 <ProfileIcon sx={{color: '#263238'}}/>
                 <Typography className={classes.sideBarText} variant="h6">Пользователи</Typography>
             </div>
+            <Button style={{marginTop: '15px'}}
+                variant="contained" color="primary"
+                fullWidth>
+                Отправить
+            </Button>
         </div>
     );
 };

@@ -6,8 +6,10 @@ import {Container, Grid} from "@mui/material";
 import {grey} from "@mui/material/colors";
 import {Tweet} from "../components/Tweet/Tweet";
 import {SideMenu} from "../components/SideMenu/SideMenu";
+import theme from "../theme";
+import {AddTweetForm} from "../components/AddTweetForm/AddTweetForm";
 
-export const useStylesHome = makeStyles(() => ({
+export const useStylesHome = makeStyles((theme) => ({
     body: {
         paddingLeft: '200px',
         paddingRight: '200px',
@@ -47,7 +49,7 @@ export const useStylesHome = makeStyles(() => ({
     },
 
     sideBarText: {
-        fontWeight: 650,
+        fontWeight: 550,
         fontSize: '18px',
         letterSpacing: '0.5px',
         marginLeft: '15px',
@@ -55,15 +57,12 @@ export const useStylesHome = makeStyles(() => ({
 
     contentBlocksCenter: {
         width: '600px',
+        height: '100vh',
         '& .MuiPaper-root': {
             borderRadius: '0',
             borderBottom: '0',
             borderTop: '0',
         },
-    },
-
-    contentBlocksRight: {
-        padding: '10px 50px',
     },
 
     tweetsWrapper: {
@@ -87,10 +86,72 @@ export const useStylesHome = makeStyles(() => ({
     },
 
     tweetBlock: {
-        padding: '10px 15px',
+        padding: '20px 15px',
         '&:hover': {
             backgroundColor: 'rgb(245, 248, 250)',
             cursor: 'pointer',
+        },
+    },
+
+    tweetAvatar: {
+        width: '40px',
+        height: '40px',
+        // marginLeft: '17px',
+        marginRight: '10px',
+
+    },
+
+    addFormBody: {
+        display: 'flex',
+        width: '80%',
+        margin: '0 auto',
+        padding: '20px',
+        borderBottom: '1px solid rgb(239, 243, 244)',
+    },
+
+    addFormTextarea: {
+        width: '80%',
+        border: 0,
+        fontSize: 20,
+        outline: 'none',
+        fontFamily: 'inherit',
+        resize: 'none',
+    },
+
+    addFormBottom: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '10px 20px',
+        borderBottom: '1px solid rgb(239, 243, 244)',
+    },
+
+    addFormBottomActions: {
+        marginTop: 10,
+        paddingLeft: 70,
+
+    },
+
+    tweetFooter: {
+        display: 'flex',
+        position: 'relative',
+        left: -25,
+        justifyContent: 'space-between',
+        maxWidth: 450,
+    },
+
+    addFormBottomRight: {
+        display: 'flex',
+        alignItems: 'center',
+    },
+
+    addFormCircleProgress: {
+        position: 'relative',
+        width: 20,
+        height: 20,
+        margin: '0 10px',
+        '& .MuiCircularProgress-root': {
+            position: 'absolute',
         },
     },
 
@@ -105,6 +166,12 @@ export const useStylesHome = makeStyles(() => ({
         position: 'relative',
         left: '-10px',
     },
+
+    contentBlocksRight: {
+        padding: '10px 50px',
+    },
+
+
 
     searchFieldInput: {
         border: '0',
@@ -179,6 +246,7 @@ export const Home = () => {
                         <Paper className={classes.tweetsHeader} variant="outlined">
                             <Typography className={classes.tweetsHeaderText} variant="h6">Главная</Typography>
                         </Paper>
+                        <AddTweetForm classes={classes}/>
                         <Tweet classes={classes}
                                text="Впереди выходные: как насчет Комаровки? Узнали, что и по каким ценам там сейчас."
                                user={{
