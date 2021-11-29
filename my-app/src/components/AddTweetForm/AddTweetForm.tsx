@@ -7,16 +7,15 @@ import IconButton from '@material-ui/core/IconButton';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import ImageOutlinedIcon from '@material-ui/icons/ImageOutlined';
 import EmojiIcon from '@material-ui/icons/SentimentSatisfiedOutlined';
-import {useStylesHome} from "../../pages/Home";
+import {useStylesHome} from "../../theme/HomeTheme";
 
 interface AddTweetFormProps {
     classes: ReturnType<typeof useStylesHome>;
-    maxRows?: number;
 }
 
 const MAX_LENGTH = 280;
 
-export const AddTweetForm: React.FC<AddTweetFormProps> = ({classes, maxRows,}: AddTweetFormProps): React.ReactElement => {
+export const AddTweetForm: React.FC<AddTweetFormProps> = ({classes}: AddTweetFormProps): React.ReactElement => {
     const [text, setText] = React.useState<string>('');
     const textLimitPercent = Math.round((text.length / 280) * 100);
     const textCount = MAX_LENGTH - text.length;
@@ -44,7 +43,6 @@ export const AddTweetForm: React.FC<AddTweetFormProps> = ({classes, maxRows,}: A
                     className={classes.addFormTextarea}
                     placeholder="Что происходит?"
                     value={text}
-                    rowsMax={maxRows}
                 />
             </div>
             <div className={classes.addFormBottom}>

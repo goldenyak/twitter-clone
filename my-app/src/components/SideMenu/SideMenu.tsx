@@ -8,13 +8,15 @@ import EmailIcon from "@mui/icons-material/EmailOutlined";
 import BookmarkIcon from "@mui/icons-material/BookmarkBorderOutlined";
 import ListIcon from "@mui/icons-material/FormatListBulletedOutlined";
 import ProfileIcon from "@mui/icons-material/PermIdentityOutlined";
-import {useStylesHome} from "../../pages/Home";
+import {useStylesHome} from "../../theme/HomeTheme";
+
 
 interface SideMenuProps {
     classes: ReturnType<typeof useStylesHome>;
 }
 
-export const SideMenu: React.FC<SideMenuProps> = ({classes}: SideMenuProps): React.ReactElement => {
+export const SideMenu: React.FC<SideMenuProps> = ({classes,}: SideMenuProps): React.ReactElement => {
+
     return (
         <div className={classes.sideBar}>
             <IconButton>
@@ -48,9 +50,10 @@ export const SideMenu: React.FC<SideMenuProps> = ({classes}: SideMenuProps): Rea
                 <ProfileIcon sx={{color: '#263238'}}/>
                 <Typography className={classes.sideBarText} variant="h6">Пользователи</Typography>
             </div>
-            <Button style={{marginTop: '15px'}}
-                variant="contained" color="primary"
-                fullWidth>
+            <Button
+                    style={{marginTop: '15px'}}
+                    variant="contained" color="primary"
+                    fullWidth>
                 Отправить
             </Button>
         </div>

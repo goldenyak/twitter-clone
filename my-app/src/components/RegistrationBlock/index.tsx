@@ -6,7 +6,7 @@ import DialogContent from "@mui/material/DialogContent";
 import TextField from "@mui/material/TextField";
 import DialogActions from "@mui/material/DialogActions";
 import Dialog from "@mui/material/Dialog";
-import {useStylesSignIn} from "../../pages/SignIn";
+import {useStylesSignIn} from "../../theme/SignInTheme";
 
 interface RegistrationBlockProps {
     title: string;

@@ -7,7 +7,7 @@ import ReplyIcon from "@mui/icons-material/MapsUgcOutlined";
 import RepeatIcon from "@mui/icons-material/RepeatOutlined";
 import LikeIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShareIcon from "@mui/icons-material/IosShareOutlined";
-import {useStylesHome} from "../../pages/Home";
+import {useStylesHome} from "../../theme/HomeTheme";
 
 interface TweetProps {
     classes: ReturnType<typeof useStylesHome>;
