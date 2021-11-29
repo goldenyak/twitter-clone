@@ -97,6 +97,7 @@ export const useStylesHome = makeStyles((theme) => ({
         display: 'flex',
         margin: '0 auto',
         padding: '20px',
+
     },
 
     addFormTextarea: {
@@ -106,6 +107,7 @@ export const useStylesHome = makeStyles((theme) => ({
         outline: 'none',
         fontFamily: 'inherit',
         resize: 'none',
+
     },
 
     addFormBottom: {
@@ -113,7 +115,7 @@ export const useStylesHome = makeStyles((theme) => ({
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '10px 20px',
-        borderBottom: '1px solid rgb(239, 243, 244)',
+        // borderBottom: '1px solid rgb(239, 243, 244)',
     },
 
     addFormBottomActions: {

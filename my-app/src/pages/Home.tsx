@@ -34,6 +34,7 @@ export const Home = () => {
                             <Typography className={classes.tweetsHeaderText} variant="h6">Главная</Typography>
                         </Paper>
                         <AddTweetForm classes={classes}/>
+                        <Divider/>
                         <Tweet classes={classes}
                                text="Впереди выходные: как насчет Комаровки? Узнали, что и по каким ценам там сейчас."
                                user={{

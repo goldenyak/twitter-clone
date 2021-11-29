@@ -9,6 +9,9 @@ import BookmarkIcon from "@mui/icons-material/BookmarkBorderOutlined";
 import ListIcon from "@mui/icons-material/FormatListBulletedOutlined";
 import ProfileIcon from "@mui/icons-material/PermIdentityOutlined";
 import {useStylesHome} from "../../theme/HomeTheme";
+import ModalBlock from "../ModalBlock";
+import {AddTweetModalBlock} from "../AddTweetModalBlock/AddTweetModalBlock";
+import {AddTweetForm} from "../AddTweetForm/AddTweetForm";
 
 
 interface SideMenuProps {
@@ -16,6 +19,16 @@ interface SideMenuProps {
 }
 
 export const SideMenu: React.FC<SideMenuProps> = ({classes,}: SideMenuProps): React.ReactElement => {
+
+    const [visibleAddTweet, setVisibleAddTweet] = React.useState<boolean>(false); // Модальное окно для твита
+
+    const handleOpenAddTweetModal = () => {
+        setVisibleAddTweet(true)
+    } // Открываем модальное окно для твита
+
+    const onCloseAddTweetModal = () => {
+        setVisibleAddTweet(false)
+    } // Закрываем модальное окно для твита
 
     return (
         <div className={classes.sideBar}>
@@ -50,12 +63,17 @@ export const SideMenu: React.FC<SideMenuProps> = ({classes,}: SideMenuProps): Re
                 <ProfileIcon sx={{color: '#263238'}}/>
                 <Typography className={classes.sideBarText} variant="h6">Пользователи</Typography>
             </div>
-            <Button
+            <Button onClick={handleOpenAddTweetModal}
                     style={{marginTop: '15px'}}
                     variant="contained" color="primary"
                     fullWidth>
                 Отправить
             </Button>
+            <AddTweetModalBlock onClose={onCloseAddTweetModal}
+                                title=""
+                                visible={visibleAddTweet}
+                                classes={classes}>
+            </AddTweetModalBlock>
         </div>
     );
 };
