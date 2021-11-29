@@ -32,7 +32,7 @@ export const AddTweetModalBlock: React.FC<AddTweetModalBlockProps> = ({
                     <Typography variant="h5">{title}</Typography>
                 </div>
                 <div style={{width: '500px'}}>
-                    <AddTweetForm classes={classes}/>
+                    <AddTweetForm maxRows={8} classes={classes}/>
                 </div>
 
             </DialogTitle>
