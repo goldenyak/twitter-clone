@@ -23,7 +23,7 @@ export const AddTweetModalBlock: React.FC<AddTweetModalBlockProps> = ({
                                                                       }): React.ReactElement => {
 
     return (
-        <Dialog open={visible}>
+        <Dialog style={ {position: 'absolute', left: '-110px', top: '-150px',}} open={visible}>
             <DialogTitle>
                 <div>
                     <IconButton onClick={onClose}>
@@ -31,7 +31,10 @@ export const AddTweetModalBlock: React.FC<AddTweetModalBlockProps> = ({
                     </IconButton>
                     <Typography variant="h5">{title}</Typography>
                 </div>
-                <AddTweetForm classes={classes}/>
+                <div style={{width: '500px'}}>
+                    <AddTweetForm classes={classes}/>
+                </div>
+
             </DialogTitle>
         </Dialog>
     );

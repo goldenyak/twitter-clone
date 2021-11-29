@@ -72,7 +72,8 @@ export const SideMenu: React.FC<SideMenuProps> = ({classes,}: SideMenuProps): Re
             <AddTweetModalBlock onClose={onCloseAddTweetModal}
                                 title=""
                                 visible={visibleAddTweet}
-                                classes={classes}>
+                                classes={classes}
+            >
             </AddTweetModalBlock>
         </div>
     );
