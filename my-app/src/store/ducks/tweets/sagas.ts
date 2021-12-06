@@ -2,7 +2,7 @@ import {takeEvery} from 'redux-saga/effects'
 import {TweetsActionType} from "./actionCreators";
 
 export function* fetchTweetsRequest() {
-    console.log('test')
+    alert('test')
 }
 
 export function* tweetsSaga() {
