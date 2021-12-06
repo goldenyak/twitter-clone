@@ -1,10 +1,13 @@
-import {takeEvery} from 'redux-saga/effects'
-import {TweetsActionType} from "./actionCreators";
+import {call, takeEvery, takeLatest} from 'redux-saga/effects'
+import { TweetsActionType} from "./actionCreators";
+import { TweetsApi} from "../../../services/api/tweetsApi";
 
 export function* fetchTweetsRequest() {
-    alert('test')
+    // @ts-ignore
+    const data = yield call(TweetsApi.fetchTweets)
+    console.log(data)
 }
 
 export function* tweetsSaga() {
-    yield takeEvery(TweetsActionType.FETCH_TWEETS, fetchTweetsRequest);
+    yield takeLatest(TweetsActionType.FETCH_TWEETS, fetchTweetsRequest);
 }
