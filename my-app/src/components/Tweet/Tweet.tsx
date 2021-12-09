@@ -12,8 +12,8 @@ import {useStylesHome} from "../../theme/HomeTheme";
 interface TweetProps {
     classes: ReturnType<typeof useStylesHome>;
     user: {
-        fullName: string,
-        userName: string,
+        fullname: string,
+        username: string,
         avatarUrl: string,
     };
     text: string,
@@ -24,12 +24,12 @@ export const Tweet: React.FC<TweetProps> = ({classes, user, text}: TweetProps): 
         <Paper className={classes.tweetBlock} variant="outlined">
             <Grid container spacing={3}>
                 <Grid item xs={1}>
-                    <Avatar alt={`Аватарка пользователя ${user.fullName}`}
+                    <Avatar alt={`Аватарка пользователя ${user.fullname}`}
                             src={user.avatarUrl}/>
                 </Grid>
                 <Grid item xs={11}>
                     <div style={{marginLeft: '15px'}}>
-                        <Typography><b>{user.fullName}</b> <span className={classes.tweetUserName}>@{user.userName}</span>
+                        <Typography><b>{user.fullname}</b> <span className={classes.tweetUserName}>@{user.username}</span>
                             <Typography style={{marginTop: '10px'}}>
                                 {text}
                             </Typography>

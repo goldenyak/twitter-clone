@@ -86,6 +86,11 @@ export const useStylesHome = makeStyles((theme) => ({
         },
     },
 
+    tweetsCentered: {
+      textAlign: 'center',
+        marginTop: '15px',
+    },
+
     tweetAvatar: {
         width: '40px',
         height: '40px',

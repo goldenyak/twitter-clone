@@ -2,7 +2,6 @@ import React from 'react';
 import {makeStyles, Button, Typography, IconButton} from '@material-ui/core';
 import Paper from '@mui/material/Paper';
 import {Container} from "@mui/material";
-import {grey} from "@mui/material/colors";
 import {Tweet} from "../components/Tweet/Tweet";
 import {SideMenu} from "../components/SideMenu/SideMenu";
 import {AddTweetForm} from "../components/AddTweetForm/AddTweetForm";
@@ -13,20 +12,24 @@ import ListItemText from '@material-ui/core/ListItemText/ListItemText';
 import List from '@material-ui/core/List/List';
 import ListItem from '@material-ui/core/ListItem/ListItem';
 import Divider from '@material-ui/core/Divider/Divider';
+import CircularProgress from '@mui/material/CircularProgress';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar/Avatar';
 import InputAdornment from '@mui/material/InputAdornment';
 import {useStylesHome} from "../theme/HomeTheme";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {fetchTweets} from "../store/ducks/tweets/actionCreators";
+import {selectIsTweetsLoading, selectTweetsItems} from "../store/ducks/tweets/selectors";
 
 export const Home = () => {
-    const dispatch = useDispatch();
     const classes = useStylesHome();
+    const dispatch = useDispatch();
+    const tweets = useSelector(selectTweetsItems);
+    const isLoading = useSelector(selectIsTweetsLoading);
 
     React.useEffect(() => {
         dispatch(fetchTweets())
-    }, []);
+    }, [dispatch]);
 
     return (
         <Container maxWidth="lg">
@@ -41,13 +44,11 @@ export const Home = () => {
                         </Paper>
                         <AddTweetForm classes={classes}/>
                         <Divider/>
-                        <Tweet classes={classes}
-                               text="Впереди выходные: как насчет Комаровки? Узнали, что и по каким ценам там сейчас."
-                               user={{
-                                   fullName: "Ivan",
-                                   userName: "vanya",
-                                   avatarUrl: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-                               }}/>
+                        {isLoading ?
+                            <div className={classes.tweetsCentered}> <CircularProgress /> </div>
+                            : tweets.map((tweet =>
+                            <Tweet classes={classes} key={tweet._id} text={tweet.text} user={tweet.user} />
+                        ))}
                     </Paper>
                 </div>
                 {/*Блок с поиском*/}
