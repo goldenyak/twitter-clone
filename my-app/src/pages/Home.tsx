@@ -17,10 +17,16 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar/Avatar';
 import InputAdornment from '@mui/material/InputAdornment';
 import {useStylesHome} from "../theme/HomeTheme";
+import {useDispatch} from "react-redux";
+import {fetchTweets} from "../store/ducks/tweets/actionCreators";
 
 export const Home = () => {
-
+    const dispatch = useDispatch();
     const classes = useStylesHome();
+
+    React.useEffect(() => {
+        dispatch(fetchTweets())
+    }, []);
 
     return (
         <Container maxWidth="lg">
