@@ -8,15 +8,11 @@ export enum LoadingState {
 
 export interface Tag {
     _id: string,
-    user: {
-        fullname: string,
-        username: string,
-        avatarUrl: string,
-    };
-    text: string,
+    name: string,
+    count: number,
 }
 
-export interface TweetsState {
-    items: Tweet[],
+export interface TagsState {
+    items: Tag[],
     loadingState: LoadingState,
 }
