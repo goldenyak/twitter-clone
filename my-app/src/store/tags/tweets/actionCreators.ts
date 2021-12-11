@@ -1,38 +1,38 @@
 import {Action} from "redux";
-import {LoadingState, TweetsState} from "./contracts/state";
+import {LoadingState, TagsState} from "./contracts/state";
 
-export enum TweetsActionType {
-    SET_TWEETS = "tweets/SET_TWEETS",
-    FETCH_TWEETS = "tweets/FETCH_TWEETS",
-    SET_LOADING_STATE = "tweets/ SET_LOADING_STATE "
+export enum TagsActionType {
+    SET_TAGS = "tags/SET_TAGS",
+    FETCH_TAGS = "tags/FETCH_TAGS",
+    SET_LOADING_STATE = "tags/ SET_LOADING_STATE "
 }
 
-export interface SetTweetsActionInterface extends Action<TweetsActionType> {
-    type: TweetsActionType.SET_TWEETS,
-    payload: TweetsState['items'],
+export interface SetTagsActionInterface extends Action<TagsActionType> {
+    type: TagsActionType.SET_TAGS,
+    payload: TagsState['items'],
 }
 
-export interface FetchTweetsActionInterface extends Action<TweetsActionType> {
-    type: TweetsActionType.FETCH_TWEETS,
+export interface FetchTagsActionInterface extends Action<TagsActionType> {
+    type: TagsActionType.FETCH_TAGS,
 }
 
-export interface SetTweetsLoadingStateInterface extends Action<TweetsActionType> {
-    type: TweetsActionType.SET_LOADING_STATE,
+export interface SetTagsLoadingStateInterface extends Action<TagsActionType> {
+    type: TagsActionType.SET_LOADING_STATE,
     payload: LoadingState,
 }
 
-export const setTweets = (payload: TweetsState['items']): SetTweetsActionInterface => ({
-    type: TweetsActionType.SET_TWEETS,
+export const setTags = (payload: TagsState['items']): SetTagsActionInterface => ({
+    type: TagsActionType.SET_TAGS,
     payload,
 })
 
-export const setTweetsLoadingState = (payload: LoadingState): SetTweetsLoadingStateInterface => ({
-    type: TweetsActionType.SET_LOADING_STATE,
+export const setTagsLoadingState = (payload: LoadingState): SetTagsLoadingStateInterface => ({
+    type: TagsActionType.SET_LOADING_STATE,
     payload,
 })
 
-export const fetchTweets = (): FetchTweetsActionInterface => ({
-    type: TweetsActionType.FETCH_TWEETS,
+export const fetchTags = (): FetchTagsActionInterface => ({
+    type: TagsActionType.FETCH_TAGS,
 })
 
-export type TweetsActions = SetTweetsActionInterface | SetTweetsLoadingStateInterface | FetchTweetsActionInterface
+export type TagsActions = SetTagsActionInterface | SetTagsLoadingStateInterface | FetchTagsActionInterface
