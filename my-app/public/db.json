@@ -93,6 +93,8 @@
   ],
   "user": {
     "_id": "5f625ff6bd97609c6925e2b4",
-
+    "fullname": "Dickerson Mcleod",
+    "username": "kirk",
+    "avatarUrl": "https://source.unsplash.com/random/100x100?3"
   }
 }
