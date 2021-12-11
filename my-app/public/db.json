@@ -91,7 +91,11 @@
       }
     }
   ],
-  "themes": [],
+  "themes": [
+    {"name":  "рыбалка", "count":  1423},
+    {"name":  "спорт", "count":  3657},
+    {"name":  "путешествия", "count":  354}
+  ],
   "users": [
     {
       "fullname": "Dickerson Mcleod",
