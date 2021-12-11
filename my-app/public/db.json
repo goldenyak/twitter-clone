@@ -91,10 +91,28 @@
       }
     }
   ],
+  "themes": [],
+  "users": [
+    {
+      "fullname": "Dickerson Mcleod",
+      "username": "kirk",
+      "avatarUrl": "https://source.unsplash.com/random/100x100?3"
+    },
+    {
+      "fullname": "Hewitt Nelson",
+      "username": "matthews",
+      "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+    },
+    {
+      "fullname": "Helene Wolfe",
+      "username": "castaneda",
+      "avatarUrl": "https://source.unsplash.com/random/100x100?4"
+    }
+  ],
   "user": {
     "_id": "5f625ff6bd97609c6925e2b4",
-    "fullname": "Dickerson Mcleod",
-    "username": "kirk",
-    "avatarUrl": "https://source.unsplash.com/random/100x100?3"
+    "fullname": "Yakovlev Egor",
+    "username": "yakovlev88",
+    "avatarUrl": "https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFuJTIwMzMlMjB5ZWFyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
   }
 }
