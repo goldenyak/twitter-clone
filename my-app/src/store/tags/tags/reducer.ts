@@ -7,7 +7,7 @@ export const initialTagsState: TagsState = {
     loadingState: LoadingState.NEVER,
 }
 
-export const TagsReducer = produce((draft: Draft<TagsState>, action: TagsActions) => {
+export const tagsReducer = produce((draft: Draft<TagsState>, action: TagsActions) => {
 
     switch (action.type) {
         case TagsActionType.SET_TAGS:

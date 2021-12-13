@@ -14,6 +14,6 @@ export function* fetchTagsRequest() {
     
 }
 
-export function* TagsSaga() {
+export function* tagsSaga() {
     yield takeLatest(TagsActionType.FETCH_TAGS, fetchTagsRequest);
 }
