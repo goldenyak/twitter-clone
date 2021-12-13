@@ -4,7 +4,7 @@ import {createSelector} from "reselect";
 
 export const selectTags = (state: RootState): TagsState => state.tags;
 
-export const selectTagsItems = createSelector(selectTags, Tags => Tags.items);
+export const selectTagsItems = createSelector(selectTags, tags => tags.items);
 
 export const selectLoadingState = (state: RootState): LoadingState => selectTags(state).loadingState;
 
