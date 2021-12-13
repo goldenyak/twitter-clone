@@ -8,16 +8,21 @@ import {IconButton, Typography} from "@material-ui/core";
 import {useStylesHome} from "../../theme/HomeTheme";
 import {TagsState} from "../../store/tags/tags/contracts/state";
 import {useSelector} from "react-redux";
-import {selectTagsItems} from "../../store/tags/tags/selectors";
+import {selectIsTagsLoaded, selectTagsItems} from "../../store/tags/tags/selectors";
 
 
 interface TagsProps {
     classes: ReturnType<typeof useStylesHome>;
 }
 
-export const Tags: React.FC<TagsProps> = ({classes}: TagsProps): React.ReactElement => {
+export const Tags: React.FC<TagsProps> = ({classes}: TagsProps): React.ReactElement | null => {
 
     const items = useSelector(selectTagsItems);
+    const isLoaded = useSelector(selectIsTagsLoaded)
+
+    if (!isLoaded) {
+        return null;
+    }
 
     return (
         <Paper className={classes.rightSideBlock}>
