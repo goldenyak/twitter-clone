@@ -12,6 +12,7 @@ import {useStylesHome} from "../../theme/HomeTheme";
 import ModalBlock from "../ModalBlock";
 import {AddTweetModalBlock} from "../AddTweetModalBlock/AddTweetModalBlock";
 import {AddTweetForm} from "../AddTweetForm/AddTweetForm";
+import {Link} from "react-router-dom";
 
 
 interface SideMenuProps {
@@ -32,9 +33,11 @@ export const SideMenu: React.FC<SideMenuProps> = ({classes,}: SideMenuProps): Re
 
     return (
         <div className={classes.sideBar}>
-            <IconButton>
-                <TwitterIcon color="primary" fontSize='large'/>
-            </IconButton>
+            <Link to="/signIn">
+                <IconButton>
+                    <TwitterIcon color="primary" fontSize='large'/>
+                </IconButton>
+            </Link>
             <div className={classes.sideBarItem}>
                 <HomeIcon sx={{color: '#263238'}}/>
                 <Typography className={classes.sideBarText} variant="h6">Главная</Typography>

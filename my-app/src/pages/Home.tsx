@@ -22,6 +22,7 @@ import {fetchTweets} from "../store/ducks/tweets/actionCreators";
 import {selectIsTweetsLoading, selectTweetsItems} from "../store/ducks/tweets/selectors";
 import {fetchTags} from "../store/tags/tags/actionCreators";
 import {Tags} from "../components/Tags/Tags";
+import {Route, Routes} from 'react-router-dom';
 
 export const Home = () => {
     const classes = useStylesHome();
@@ -48,9 +49,9 @@ export const Home = () => {
                         <AddTweetForm classes={classes}/>
                         <Divider/>
                         {isLoading ?
-                            <div className={classes.tweetsCentered}><CircularProgress/></div>
-                            : tweets.map((tweet =>
-                                    <Tweet classes={classes} key={tweet._id} text={tweet.text} user={tweet.user}/>
+                            (<div className={classes.tweetsCentered}><CircularProgress/></div>)
+                            : (tweets.map((tweet =>
+                                <Tweet classes={classes} key={tweet._id} text={tweet.text} user={tweet.user}/>)
                             ))}
                     </Paper>
                 </div>
